@@ -1,5 +1,6 @@
 package KitchenMaster;
 
+<<<<<<< HEAD
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -36,4 +37,8 @@ public class Seasoning {
 	public static ArrayList<String> getSeasonings() {
 		return seasonings;
 	}
+=======
+public class Seasoning {
+
+>>>>>>> 3b63bb3bec64d6bee12f4fcbf810cc4d449736e6
 }

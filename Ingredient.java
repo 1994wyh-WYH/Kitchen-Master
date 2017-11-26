@@ -1,4 +1,5 @@
 package KitchenMaster;
+<<<<<<< HEAD
 /**
  * This class represents an ingredient object.
  * @author Yihan
@@ -66,4 +67,9 @@ public class Ingredient {
 			}
 		}
 	}
+=======
+
+public class Ingredient {
+
+>>>>>>> 3b63bb3bec64d6bee12f4fcbf810cc4d449736e6
 }
