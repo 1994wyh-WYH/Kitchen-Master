@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/colorAccent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text=" Enter your first food:"
+        android:textSize="30sp"
+        android:textColor="#ffff"
+        android:textStyle="bold"
+        android:background="@color/colorPrimary"/>
+
+    <EditText
+        android:id="@+id/food1"
+        android:layout_width="match_parent"
+        android:layout_height="60dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text=" Enter your second food:"
+        android:textSize="30sp"
+        android:textColor="#ffff"
+        android:textStyle="bold"
+        android:background="@color/colorPrimary"/>
+
+    <EditText
+        android:id="@+id/food2"
+        android:layout_width="match_parent"
+        android:layout_height="60dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text=" Enter your thrid food:"
+        android:textSize="30sp"
+        android:textColor="#ffff"
+        android:textStyle="bold"
+        android:background="@color/colorPrimary"/>
+
+    <EditText
+        android:id="@+id/food3"
+        android:layout_width="match_parent"
+        android:layout_height="60dp" />
+
+    <Button
+        android:id="@+id/next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f00"
+        android:text="Next"
+        android:textAllCaps="true"
+        android:textColor="#fff"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+</LinearLayout>
