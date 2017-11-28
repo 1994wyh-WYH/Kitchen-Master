@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/colorAccent">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=" Please choose category: "
+        android:textSize="25sp"
+        android:textColor="#ffff"
+        android:textStyle="bold"
+        android:background="@color/colorPrimary"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    <CheckBox
+        android:id="@+id/all"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#fa0"
+        android:text="All"
+        android:layout_weight="1"
+        android:layout_marginRight="5sp"
+        android:textAllCaps="true"
+        android:textColor="#fff"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:layout_marginTop="5sp" />
+
+    <CheckBox
+        android:id="@+id/carb"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:layout_marginRight="5sp"
+        android:background="#fa0"
+        android:text="Carb"
+        android:textAllCaps="true"
+        android:textColor="#fff"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:layout_marginTop="5sp" />
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    <CheckBox
+        android:id="@+id/meat"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#fa0"
+        android:text="Meat"
+        android:layout_weight="1"
+        android:layout_marginRight="5sp"
+        android:textAllCaps="true"
+        android:textColor="#fff"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:layout_marginTop="5sp" />
+
+    <CheckBox
+        android:id="@+id/veggie"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#fa0"
+        android:text="Veggie"
+        android:layout_weight="1"
+        android:layout_marginRight="5sp"
+        android:textAllCaps="true"
+        android:textColor="#fff"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:layout_marginTop="5sp" />
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+    <CheckBox
+        android:id="@+id/fruit"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#fa0"
+        android:text="Fruit"
+        android:layout_weight="1"
+        android:layout_marginRight="5sp"
+        android:textAllCaps="true"
+        android:textColor="#fff"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:layout_marginTop="5sp" />
+
+    <CheckBox
+        android:id="@+id/seafood"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#fa0"
+        android:text="Seafood"
+        android:layout_weight="1"
+        android:layout_marginRight="5sp"
+        android:textAllCaps="true"
+        android:textColor="#fff"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:layout_marginTop="5sp" />
+        </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+    <CheckBox
+        android:id="@+id/oil"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#fa0"
+        android:text="Oil"
+        android:layout_weight="1"
+        android:layout_marginRight="5sp"
+        android:textAllCaps="true"
+        android:textColor="#fff"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:layout_marginTop="5sp" />
+
+    <CheckBox
+        android:id="@+id/seasoning"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#fa0"
+        android:text="Seasoning"
+        android:layout_weight="1"
+        android:layout_marginRight="5sp"
+        android:textAllCaps="true"
+        android:textColor="#fff"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:layout_marginTop="5sp" />
+            </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+    <CheckBox
+        android:id="@+id/dairy"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#fa0"
+        android:text="Dairy"
+        android:layout_weight="1"
+        android:layout_marginRight="5sp"
+        android:textAllCaps="true"
+        android:textColor="#fff"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:layout_marginTop="5sp" />
+
+    <CheckBox
+        android:id="@+id/other"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#fa0"
+        android:text="Other"
+        android:layout_weight="1"
+        android:layout_marginRight="5sp"
+        android:textAllCaps="true"
+        android:textColor="#fff"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:layout_marginTop="5sp" />
+                </LinearLayout>
+
+
+    <Button
+        android:id="@+id/next2"
+        android:layout_marginTop="10sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f00"
+        android:text="Next"
+        android:textAllCaps="true"
+        android:textColor="#fff"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+
+</LinearLayout>
