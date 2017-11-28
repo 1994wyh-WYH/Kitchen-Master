@@ -35,7 +35,8 @@ Chayote
 Vegetable Pear
 Chervil
 Chicory
-Chinese Kale, Kai-Lan
+Chinese Kale
+Kai-Lan
 Chives
 Cilantro
 Collard Greens
@@ -57,7 +58,8 @@ Horseradish
 Jew’s Ear
 Pepeao
 Jicama
-Jute, Potherb
+Jute
+Potherb
 Kale
 Chinese kale
 chinese cabbage
@@ -97,16 +99,15 @@ Purslane
 Quorn
 Radicchio
 Radish Sprouts
-Radishes, Daikon
-Radishes, Red
+Radishes
+radish
 Rappini
 Rowal
 Rutabaga
 Sauerkraut
 Scallion
 vegetable
-Sea Vegetables
-Sea Vegetables
+Sea Vegetable
 Kelp
 Kombu
 Nori
@@ -117,12 +118,6 @@ Wakame
 Seaweed
 Shallots
 Spinach
-Sprouts, Alfalfa
-Sprouts, Broccoli
-Sprouts, Clover
-Sprouts, Mung Bean
-Sprouts, Radish
-Sprouts, Spicy
 Squash
 Squash Chayote
 Squash Flower
@@ -144,7 +139,6 @@ Tomatoes
 Turnip Greens
 Turnips
 Water Chestnut
-Water Chestnut, Matai
 Watercress
 Wax Gourd
 Chinese Preserving Melon
