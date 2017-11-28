@@ -1,5 +1,4 @@
 package KitchenMaster;
-<<<<<<< HEAD
 /**
  * This class represents an ingredient object.
  * @author Yihan
@@ -8,14 +7,6 @@ package KitchenMaster;
 public class Ingredient {
 	private String name;
 	private String category;
-//	private String meatList;
-//	private String seaaFoodList;
-//	private String veggieList;
-//	private String seasoningList;
-//	private String dairyList;
-//	private String oilList;
-//	private String carbList;
-//	private String otherList;
 	
 	public Ingredient(String name) {
 		this.name = name;
@@ -67,9 +58,20 @@ public class Ingredient {
 			}
 		}
 	}
-=======
 
-public class Ingredient {
+	/**
+	 * @return the name
+	 */
+	public String getName() {
+		return name;
+	}
 
->>>>>>> 3b63bb3bec64d6bee12f4fcbf810cc4d449736e6
+	/**
+	 * @return the category
+	 */
+	public String getCategory() {
+		return category;
+	}
+	
+	
 }

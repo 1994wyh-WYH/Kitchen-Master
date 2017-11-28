@@ -1,6 +1,5 @@
 package KitchenMaster;
 
-<<<<<<< HEAD
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -36,12 +35,6 @@ public class Oil {
 	 */
 	public static ArrayList<String> getOils() {
 		return oils;
-=======
-public class Oil {
-
-	public Oil() {
-		// TODO Auto-generated constructor stub
->>>>>>> 3b63bb3bec64d6bee12f4fcbf810cc4d449736e6
 	}
 
 }
