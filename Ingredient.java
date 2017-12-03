@@ -57,6 +57,12 @@ public class Ingredient {
 				this.category="Veggie";
 			}
 		}
+		
+		for(String temp:Fruit.getFruits()) {
+			if(temp.equals(name)) {
+				this.category="Fruit";
+			}
+		}
 	}
 
 	/**

@@ -1,52 +1,38 @@
-/**
- * This class reads the recipe .json file and constructs a list of recipes.
- */
 package KitchenMaster;
-import java.io.BufferedReader;
+
+
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.StringReader;
-import java.io.UnsupportedEncodingException;
-import java.lang.reflect.Type;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+
 import java.util.ArrayList;
-import java.util.Iterator;
 
-import javax.tools.JavaFileObject;
 
-import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
-import com.google.gson.reflect.TypeToken;
+
+
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonToken;
-
-import org.json.JSONStringer;
 
 
 
 /**
+ * This class reads the .json file of raw recipes and creates a list of recipes.
  * @author Yihan
  *
  */
 public class RecipeList {
-	private ArrayList<Recipe> recipes;
-	private static final Type REVIEW_TYPE = new TypeToken<ArrayList<Recipe>>() {
-	}.getType();
-
-	public RecipeList(String fileName) throws JSONException, IOException {
+	private static ArrayList<Recipe> recipes;
+	
+	
+	/**
+	 * This is the constructor.
+	 * @param fileName, file name of the .json file.
+	 * @throws JSONException
+	 * @throws IOException
+	 */
+	public RecipeList() throws JSONException, IOException {
 		
 		recipes=new ArrayList<>();
 
@@ -60,6 +46,12 @@ public class RecipeList {
 		
 	}
 	
+	/**
+	 * This methods reads the arraylist of recipes.
+	 * @param reader, JsonReader for reading the json file.
+	 * @return an arraylist of recipes.
+	 * @throws IOException
+	 */
 	public ArrayList<Recipe> readArray(JsonReader reader) throws IOException {
 	     ArrayList<Recipe> recipeList = new ArrayList<Recipe>();
 
@@ -71,6 +63,12 @@ public class RecipeList {
 	     return recipeList;
 	   }
 
+	/**
+	 * This method helps read and construct each recipe.
+	 * @param reader, JsonReader for reading the json file.
+	 * @return a Recipe object.
+	 * @throws IOException
+	 */
 	public Recipe readRecipe(JsonReader reader) throws IOException {
 	     int id = -1;
 	     String cuisine = null;
@@ -94,6 +92,12 @@ public class RecipeList {
 	     return new Recipe(id, cuisine, ingredients);
 	   }
 	
+	/**
+	 * This method reads and constructs an arraylist of ingredients of each recipe.
+	 * @param reader,  JsonReader for reading the json file.
+	 * @return an arraylist of Ingredient objects.
+	 * @throws IOException
+	 */
 	public ArrayList<String> readStringsArray(JsonReader reader) throws IOException {
 	     ArrayList<String> ingredients = new ArrayList<>();
 
@@ -108,7 +112,7 @@ public class RecipeList {
 	/**
 	 * @return the recipes
 	 */
-	public ArrayList<Recipe> getRecipes() {
+	public static ArrayList<Recipe> getRecipes() {
 		return recipes;
 	}
 	

@@ -1,7 +1,11 @@
 package KitchenMaster;
 
 import java.util.ArrayList;
-
+/**
+ * This class constructs the recipe object.
+ * @author Yihan
+ *
+ */
 public class Recipe {
 	private int iD;
 	private String cuisine;
