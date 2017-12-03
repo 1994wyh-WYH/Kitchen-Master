@@ -1,4 +1,4 @@
-package KitchenMaster;
+package com.example.katiechen.foodthree;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -23,7 +23,7 @@ public class FullRecipeList {
 	
 	/**
 	 * This is the constructor.
-	 * @param fileName, file name of the .json file.
+	 * //@param fileName, file name of the .json file.
 	 * @throws JSONException
 	 * @throws IOException
 	 */

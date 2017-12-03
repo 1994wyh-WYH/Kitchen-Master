@@ -5,8 +5,10 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import org.json.JSONException;
 import org.w3c.dom.Text;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 
@@ -18,7 +20,7 @@ public class Main6Activity extends AppCompatActivity {
     public String rank;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main6);
 
@@ -35,6 +37,23 @@ public class Main6Activity extends AppCompatActivity {
 
         rank = getIntent().getStringExtra(Main5Activity.RANK);
         ((TextView) findViewById(R.id.rank)).setText(rank.toString());
+
+        //((TextView) findViewById(R.id.showtest)).setText("Hello");
+
+        try {
+            FullRecipeList fr = new FullRecipeList();
+            ((TextView) findViewById(R.id.showtest)).setText("Hello");
+            ArrayList<FullRecipe> rs = fr.getFullRecipes();
+//		if(rs.isEmpty())
+//			System.out.println(1);
+            System.out.println(rs.size());
+            ((TextView) findViewById(R.id.showrecipe)).setText(Integer.toString(rs.size()));
+        } catch (Exception e){
+
+        }
+
+
+
     }
 
     @Override
@@ -44,7 +63,10 @@ public class Main6Activity extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+
     }
+
+
 
 
 }
