@@ -1,11 +1,15 @@
 package KitchenMaster;
 
 import java.util.ArrayList;
-
+/**
+ * This class constructs the recipe object.
+ * @author Yihan
+ *
+ */
 public class Recipe {
 	private int iD;
 	private String cuisine;
-	private ArrayList<Ingredient> ingredients;
+	private ArrayList<String> ingredients;
 	
 	/**
 	 * This is the constructor of the class.
@@ -13,7 +17,7 @@ public class Recipe {
 	 * @param cuisine, cuisine type of the recipe.
 	 * @param ingredients, an arrayList of ingredients needed.
 	 */
-	public Recipe(int iD, String cuisine, ArrayList<Ingredient> ingredients) {
+	public Recipe(int iD, String cuisine, ArrayList<String> ingredients) {
 		this.iD = iD;
 		this.cuisine = cuisine;
 		this.ingredients = ingredients;
@@ -36,7 +40,7 @@ public class Recipe {
 	/**
 	 * @return the ingredients
 	 */
-	public ArrayList<Ingredient> getIngredients() {
+	public ArrayList<String> getIngredients() {
 		return ingredients;
 	}
 	

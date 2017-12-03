@@ -1,27 +1,47 @@
 package KitchenMaster;
 
-<<<<<<< HEAD
-import java.io.File;
+
+import java.io.IOException;
 import java.util.ArrayList;
+
+import org.json.JSONException;
 /**
- * This class parses the ingredients from original recipes, forming a list of unique ingredients.
+ * This class gets the all distinct ingredients from original recipe list, forming a list of full Ingredient objects.
+ * Relationships between ingredients and their categories are formed.
  * @author Yihan
  *
  */
 public class IngredientList {
-	private ArrayList<String> ingredientList;
+	private static ArrayList<Ingredient> ingredientList;
 	
-	public IngredientList() {
-//		try {
-//			File file=new File("train.txt");
-//			while(file)
-//		}
-//		catch(Exception e) {
-//			
-//		}
+	/**
+	 * This is the constructor.
+	 * @throws JSONException
+	 * @throws IOException
+	 */
+	public IngredientList() throws JSONException, IOException {
+		ingredientList=new ArrayList<>();
+		ArrayList<Recipe> rs=RecipeList.getRecipes();
+		ArrayList<String> ingredients=new ArrayList<>();
+		for(Recipe r:rs) {
+			ArrayList<String> i=r.getIngredients();
+			for(String name:i) {
+			if(!ingredients.contains(name)) {
+				ingredients.add(name);
+				Ingredient temp=new Ingredient(name);
+				ingredientList.add(temp);
+				}
+			}
+		}
+		
 	}
-=======
-public class IngredientList {
 
->>>>>>> 3b63bb3bec64d6bee12f4fcbf810cc4d449736e6
+	/**
+	 * @return the ingredientList
+	 */
+	public static ArrayList<Ingredient> getIngredientList() {
+		return ingredientList;
+	}
+	
+	
 }
