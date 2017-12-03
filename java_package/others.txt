@@ -1,0 +1,33 @@
+egg
+eggs
+seed
+starch
+topping
+frosting
+yolk
+roe
+nuts
+nut
+Acorn
+Almond
+Beech
+Breadnut
+Candlenut
+Cashews
+Chestnuts
+chestnut
+Chia seed
+Filbert
+Corylus maxima
+Hazelnut 
+Corylus avellana
+Macadamia
+Nutello
+Peanut
+Pecans
+pecan
+Pignola
+Pine
+Pistachio
+Sunflower
+Walnut
