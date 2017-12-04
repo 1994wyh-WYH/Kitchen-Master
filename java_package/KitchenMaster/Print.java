@@ -17,6 +17,7 @@ public class Print {
 			Double c=r.getFat();
 			if(m<c) {
 				m=c;
+				System.out.println(m);
 			};
 		}
 		

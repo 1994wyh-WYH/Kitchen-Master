@@ -1,5 +1,7 @@
 package com.example.katiechen.foodthree;
 
+import android.content.res.Resources;
+import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -9,6 +11,7 @@ import org.json.JSONException;
 import org.w3c.dom.Text;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 
 
@@ -40,16 +43,26 @@ public class Main6Activity extends AppCompatActivity {
 
         //((TextView) findViewById(R.id.showtest)).setText("Hello");
 
+        try{
+            TestClass tc = new TestClass();
+            ((TextView) findViewById(R.id.showtest)).setText(tc.getText());
+        } catch(Exception e){
+
+        }
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+        InputStream in = getResources().openRawResource(R.raw.full_format_recipes);
         try {
-            FullRecipeList fr = new FullRecipeList();
-            ((TextView) findViewById(R.id.showtest)).setText("Hello");
+
+            FullRecipeList fr = new FullRecipeList(in);
+            ((TextView) findViewById(R.id.showtest)).setText("Hello1");
             ArrayList<FullRecipe> rs = fr.getFullRecipes();
 //		if(rs.isEmpty())
 //			System.out.println(1);
             System.out.println(rs.size());
             ((TextView) findViewById(R.id.showrecipe)).setText(Integer.toString(rs.size()));
         } catch (Exception e){
-
+            ((TextView) findViewById(R.id.showrecipe)).setText(("trouble reading JSON"));
         }
 
 
