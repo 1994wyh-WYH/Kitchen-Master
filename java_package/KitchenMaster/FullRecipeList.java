@@ -23,7 +23,7 @@ public class FullRecipeList {
 	
 	/**
 	 * This is the constructor.
-	 * //@param fileName, file name of the .json file.
+	 * @param fileName, file name of the .json file.
 	 * @throws JSONException
 	 * @throws IOException
 	 */

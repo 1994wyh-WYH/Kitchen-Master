@@ -10,55 +10,56 @@ public class Ingredient {
 	
 	public Ingredient(String name) {
 		this.name = name;
-		
-		for(String temp:Carb.getCarbs()) {
+		Carb carb=new Carb();
+		for(String temp:carb.getCarbs()) {
 			if(temp.equals(name)) {
 				this.category="Carb";
 			}
 		}
-		
-		for(String temp:Dairy.getDairies()) {
+		Dairy dairy=new Dairy();
+		for(String temp:dairy.getDairies()) {
 			if(temp.equals(name)) {
 				this.category="Dairy";
 			}
 		}
-		
-		for(String temp:Meat.getMeats()) {
+		Meat meat=new Meat();
+		for(String temp:meat.getMeats()) {
 			if(temp.equals(name)) {
 				this.category="Meat";
 			}
 		}
-		
-		for(String temp:Oil.getOils()) {
+		Oil oil=new Oil();
+		for(String temp:oil.getOils()) {
 			if(temp.equals(name)) {
 				this.category="Oil";
 			}
 		}
-		for(String temp:Other.getOthers()) {
+		Other other=new Other();
+		for(String temp:other.getOthers()) {
 			if(temp.equals(name)) {
 				this.category="Other";
 			}
 		}
-		
-		for(String temp:SeaFood.getSeaFoods()) {
+		SeaFood seafood=new SeaFood();
+		for(String temp:seafood.getSeaFoods()) {
 			if(temp.equals(name)) {
 				this.category="Sea Food";
 			}
 		}
-		
-		for(String temp:Seasoning.getSeasonings()) {
+		Seasoning seasoning=new Seasoning();
+		for(String temp:seasoning.getSeasonings()) {
 			if(temp.equals(name)) {
 				this.category="Seasoning";
 			}
 		}
-		
-		for(String temp:Veggie.getVeggies()) {
+		Veggie veggie=new Veggie();
+		for(String temp:veggie.getVeggies()) {
 			if(temp.equals(name)) {
 				this.category="Veggie";
 			}
 		}
-		
-		for(String temp:Fruit.getFruits()) {
+		Fruit fruit=new Fruit();
+		for(String temp:fruit.getFruits()) {
 			if(temp.equals(name)) {
 				this.category="Fruit";
 			}

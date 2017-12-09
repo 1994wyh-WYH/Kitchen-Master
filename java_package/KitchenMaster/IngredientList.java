@@ -21,7 +21,8 @@ public class IngredientList {
 	 */
 	public IngredientList() throws JSONException, IOException {
 		ingredientList=new ArrayList<>();
-		ArrayList<Recipe> rs=RecipeList.getRecipes();
+		RecipeList rl=new RecipeList();
+		ArrayList<Recipe> rs=rl.getRecipes();
 		ArrayList<String> ingredients=new ArrayList<>();
 		for(Recipe r:rs) {
 			ArrayList<String> i=r.getIngredients();
@@ -39,7 +40,7 @@ public class IngredientList {
 	/**
 	 * @return the ingredientList
 	 */
-	public static ArrayList<Ingredient> getIngredientList() {
+	public ArrayList<Ingredient> getIngredientList() {
 		return ingredientList;
 	}
 	
