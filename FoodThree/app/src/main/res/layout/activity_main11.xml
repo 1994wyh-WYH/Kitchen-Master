@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android = "http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/colorAccent"
+    tools:context="com.example.katiechen.foodthree.MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" How to Use "
+        android:textAllCaps="true"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#f123"
+        android:textSize="40sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="enter your food first \nchoose you category\nsfafaef\nsjnfjd\nsdbfhsfjsdjfskfmek\ndshfsjnfjsfjsf\nsdbhfdhbfshf"
+        android:textAllCaps="true"
+        android:textColor="#f123"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/gotouse"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f00"
+        android:text="Go to use"
+        android:textAllCaps="true"
+        android:textColor="#fff"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+</LinearLayout>
