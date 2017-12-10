@@ -47,7 +47,6 @@ public class Main6Activity extends AppCompatActivity {
             TestClass tc = new TestClass();
             ((TextView) findViewById(R.id.showtest)).setText(tc.getText());
         } catch(Exception e){
-
         }
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);

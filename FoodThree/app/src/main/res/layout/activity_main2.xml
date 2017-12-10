@@ -5,55 +5,83 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="@color/colorAccent">
 
-    <TextView
+    >
+
+    <LinearLayout
+        android:padding="10dp"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text=" Enter your first food:"
-        android:textSize="30sp"
-        android:textColor="#ffff"
-        android:textStyle="bold"
-        android:background="@color/colorPrimary"/>
+        android:layout_height="150dp"
+        android:orientation="vertical"
+        android:background="@drawable/bt1"
+        android:layout_weight="1"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:text="Enter First Ingredient"
+            android:textSize="30sp"
+            android:textColor="#ffff"
+            android:textStyle="bold"
+            />
 
-    <EditText
-        android:id="@+id/food1"
+        <EditText
+            android:id="@+id/food1"
+            android:layout_width="match_parent"
+            android:layout_height="75dp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:padding="10dp"
         android:layout_width="match_parent"
-        android:layout_height="60dp" />
+        android:layout_height="150dp"
+        android:background="@drawable/bt4"
+        android:orientation="vertical"
+        android:layout_weight="1">
 
-    <TextView
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:text="Enter Second Ingredient"
+            android:textColor="#ffff"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/food2"
+            android:layout_width="match_parent"
+            android:layout_height="75dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text=" Enter your second food:"
-        android:textSize="30sp"
-        android:textColor="#ffff"
-        android:textStyle="bold"
-        android:background="@color/colorPrimary"/>
+        android:layout_height="150dp"
+        android:layout_marginBottom="10dp"
+        android:layout_weight="1"
+        android:background="@drawable/bt2"
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/food2"
-        android:layout_width="match_parent"
-        android:layout_height="60dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:text="  Enter Thrid Ingredient"
+            android:textColor="#ffff"
+            android:textSize="30sp"
+            android:textStyle="bold" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text=" Enter your thrid food:"
-        android:textSize="30sp"
-        android:textColor="#ffff"
-        android:textStyle="bold"
-        android:background="@color/colorPrimary"/>
-
-    <EditText
-        android:id="@+id/food3"
-        android:layout_width="match_parent"
-        android:layout_height="60dp" />
-
+        <EditText
+            android:id="@+id/food3"
+            android:layout_width="match_parent"
+            android:layout_height="75dp" />
+    </LinearLayout>
     <Button
         android:id="@+id/next"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#f00"
+        android:layout_height="50dp"
+        android:background="@drawable/bt6"
         android:text="Next"
         android:textAllCaps="true"
         android:textColor="#fff"
