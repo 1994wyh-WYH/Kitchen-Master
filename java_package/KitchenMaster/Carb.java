@@ -17,7 +17,7 @@ public class Carb {
 			File file=new File("carbs.txt");
 			Scanner in=new Scanner(file);
 			while(in.hasNextLine()) {
-				carbs.add(in.nextLine());
+				carbs.add(in.nextLine().toLowerCase());
 			}
 			in.close();
 		}

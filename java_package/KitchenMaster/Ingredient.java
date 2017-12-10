@@ -10,59 +10,63 @@ public class Ingredient {
 	
 	public Ingredient(String name) {
 		this.name = name;
-		Carb carb=new Carb();
-		for(String temp:carb.getCarbs()) {
-			if(temp.equals(name)) {
-				this.category="Carb";
-			}
-		}
-		Dairy dairy=new Dairy();
-		for(String temp:dairy.getDairies()) {
-			if(temp.equals(name)) {
-				this.category="Dairy";
-			}
-		}
+		
 		Meat meat=new Meat();
 		for(String temp:meat.getMeats()) {
-			if(temp.equals(name)) {
+			if(name.contains(temp)) {
 				this.category="Meat";
 			}
 		}
 		Oil oil=new Oil();
 		for(String temp:oil.getOils()) {
-			if(temp.equals(name)) {
+			if(name.contains(temp)) {
 				this.category="Oil";
 			}
 		}
-		Other other=new Other();
-		for(String temp:other.getOthers()) {
-			if(temp.equals(name)) {
-				this.category="Other";
+		Dairy dairy=new Dairy();
+		for(String temp:dairy.getDairies()) {
+			if(name.contains(temp)) {
+				this.category="Dairy";
 			}
 		}
 		SeaFood seafood=new SeaFood();
 		for(String temp:seafood.getSeaFoods()) {
-			if(temp.equals(name)) {
+			if(name.contains(temp)) {
 				this.category="Sea Food";
-			}
-		}
-		Seasoning seasoning=new Seasoning();
-		for(String temp:seasoning.getSeasonings()) {
-			if(temp.equals(name)) {
-				this.category="Seasoning";
 			}
 		}
 		Veggie veggie=new Veggie();
 		for(String temp:veggie.getVeggies()) {
-			if(temp.equals(name)) {
+			if(name.contains(temp)) {
 				this.category="Veggie";
+			}
+		}
+		Carb carb=new Carb();
+		for(String temp:carb.getCarbs()) {
+			if(name.contains(temp)) {
+				this.category="Carb";
 			}
 		}
 		Fruit fruit=new Fruit();
 		for(String temp:fruit.getFruits()) {
-			if(temp.equals(name)) {
+			if(name.contains(temp)) {
 				this.category="Fruit";
 			}
+		}
+		Seasoning seasoning=new Seasoning();
+		for(String temp:seasoning.getSeasonings()) {
+			if(name.contains(temp)) {
+				this.category="Seasoning";
+			}
+		}
+		Other other=new Other();
+		for(String temp:other.getOthers()) {
+			if(name.contains(temp)) {
+				this.category="Other";
+			}
+		}
+		if(category==null) {
+			this.category="Other";
 		}
 	}
 

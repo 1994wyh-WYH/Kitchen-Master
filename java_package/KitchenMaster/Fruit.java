@@ -15,7 +15,7 @@ public class Fruit {
 			File file=new File("fruits.txt");
 			Scanner in=new Scanner(file);
 			while(in.hasNextLine()) {
-				fruits.add(in.nextLine());
+				fruits.add(in.nextLine().toLowerCase());
 			}
 			in.close();
 		}
