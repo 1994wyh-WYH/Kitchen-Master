@@ -20,7 +20,7 @@ public class Oil {
 			File file=new File("");
 			Scanner in=new Scanner(file);
 			while(in.hasNextLine()) {
-				oils.add(in.nextLine());
+				oils.add(in.nextLine().toLowerCase());
 			}
 			in.close();
 		}

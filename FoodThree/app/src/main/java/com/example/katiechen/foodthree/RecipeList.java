@@ -23,20 +23,17 @@ import com.google.gson.stream.JsonToken;
  *
  */
 public class RecipeList {
-	private static ArrayList<Recipe> recipes;
+	private ArrayList<Recipe> recipes = new ArrayList<>();;
 	
 	
 	/**
 	 * This is the constructor.
-	 * @param fileName, file name of the .json file.
+	 * @param in, file name of the .json file.
 	 * @throws JSONException
 	 * @throws IOException
 	 */
-	public RecipeList() throws JSONException, IOException {
-		
-		recipes=new ArrayList<>();
+	public RecipeList(InputStream in) throws JSONException, IOException {
 
-		InputStream in = new FileInputStream("train.json");
 		JsonReader reader = new JsonReader(new InputStreamReader(in, "UTF-8"));
 	     try {
 	       recipes=readArray(reader);
@@ -52,7 +49,7 @@ public class RecipeList {
 	 * @return an arraylist of recipes.
 	 * @throws IOException
 	 */
-	public ArrayList<Recipe> readArray(JsonReader reader) throws IOException {
+	public static ArrayList<Recipe> readArray(JsonReader reader) throws IOException {
 	     ArrayList<Recipe> recipeList = new ArrayList<Recipe>();
 
 	     reader.beginArray();
@@ -69,7 +66,7 @@ public class RecipeList {
 	 * @return a Recipe object.
 	 * @throws IOException
 	 */
-	public Recipe readRecipe(JsonReader reader) throws IOException {
+	public static Recipe readRecipe(JsonReader reader) throws IOException {
 	     int id = -1;
 	     String cuisine = null;
 	     ArrayList<String> ingredients = null;
@@ -98,7 +95,7 @@ public class RecipeList {
 	 * @return an arraylist of Ingredient objects.
 	 * @throws IOException
 	 */
-	public ArrayList<String> readStringsArray(JsonReader reader) throws IOException {
+	public static ArrayList<String> readStringsArray(JsonReader reader) throws IOException {
 	     ArrayList<String> ingredients = new ArrayList<>();
 
 	     reader.beginArray();
@@ -112,7 +109,7 @@ public class RecipeList {
 	/**
 	 * @return the recipes
 	 */
-	public static ArrayList<Recipe> getRecipes() {
+	public ArrayList<Recipe> getRecipes() {
 		return recipes;
 	}
 	

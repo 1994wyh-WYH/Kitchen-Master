@@ -22,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this,"LET'S START!",Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(MainActivity.this, Main2Activity.class);
                 startActivity(intent);
             }

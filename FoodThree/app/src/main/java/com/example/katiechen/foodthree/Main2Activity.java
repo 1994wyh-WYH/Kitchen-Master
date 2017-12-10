@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.content.Intent;
 import android.widget.EditText;
+import android.widget.Toast;
 
 
 import java.util.ArrayList;
@@ -29,7 +30,11 @@ public class Main2Activity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(Main2Activity.this, Main3Activity.class);
                 setData(intent);
-                startActivity(intent);
+                if(foodlist.size()>=1) {
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(Main2Activity.this,"Please Enter at Lease One Ingredient!",Toast.LENGTH_LONG).show();
+                }
             }
         });
     }
@@ -45,9 +50,18 @@ public class Main2Activity extends AppCompatActivity {
 
     private void setData(Intent intent) {
         foodlist = new ArrayList<>();
-        foodlist.add(((EditText) findViewById(R.id.food1)).getText().toString());
-        foodlist.add(((EditText) findViewById(R.id.food2)).getText().toString());
-        foodlist.add(((EditText) findViewById(R.id.food3)).getText().toString());
+        if(((EditText) findViewById(R.id.food1)).getText().toString().length()>0) {
+            foodlist.add(((EditText) findViewById(R.id.food1)).getText().toString());
+            System.out.println("1");
+        }
+        if(((EditText) findViewById(R.id.food2)).getText().toString().length()>0) {
+            foodlist.add(((EditText) findViewById(R.id.food2)).getText().toString());
+            System.out.println("2");
+        }
+        if(((EditText) findViewById(R.id.food3)).getText().toString().length()>0) {
+            foodlist.add(((EditText) findViewById(R.id.food3)).getText().toString());
+            System.out.println("3");
+        }
         intent.putExtra(FOODLIST, foodlist);
     }
 

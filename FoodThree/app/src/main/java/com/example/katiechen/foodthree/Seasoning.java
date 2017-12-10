@@ -20,7 +20,7 @@ public class Seasoning {
 			File file=new File("");
 			Scanner in=new Scanner(file);
 			while(in.hasNextLine()) {
-				seasonings.add(in.nextLine());
+				seasonings.add(in.nextLine().toLowerCase());
 			}
 			in.close();
 		}

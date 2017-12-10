@@ -21,7 +21,7 @@ private static ArrayList<String> others;
 			File file=new File("others.txt");
 			Scanner in=new Scanner(file);
 			while(in.hasNextLine()) {
-				others.add(in.nextLine());
+				others.add(in.nextLine().toLowerCase());
 			}
 			in.close();
 		}

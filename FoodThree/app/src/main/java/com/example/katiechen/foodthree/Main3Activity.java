@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -36,7 +37,11 @@ public class Main3Activity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(Main3Activity.this, Main4Activity.class);
                 setData(intent);
-                startActivity(intent);
+                if(catlist.size()>=1) {
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(Main3Activity.this,"Please Select at Least One Category!",Toast.LENGTH_LONG).show();
+                }
             }
         });
     }

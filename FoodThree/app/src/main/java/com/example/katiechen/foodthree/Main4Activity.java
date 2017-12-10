@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -33,7 +34,11 @@ public class Main4Activity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(Main4Activity.this, Main5Activity.class);
                 setData(intent);
-                startActivity(intent);
+                if(cuisinelist.size()>=1) {
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(Main4Activity.this,"Please Select at Least One Cuisine!",Toast.LENGTH_LONG).show();
+                }
             }
         });
     }
@@ -49,7 +54,7 @@ public class Main4Activity extends AppCompatActivity {
 
     public void setData(Intent intent) {
         cuisinelist = new ArrayList<>();
-        CheckBox check1 = findViewById(R.id.Irish);
+        CheckBox check1 = findViewById(R.id.Chinese);
         if (check1.isChecked()) {
             cuisinelist.add("chinese");
         }
@@ -124,6 +129,14 @@ public class Main4Activity extends AppCompatActivity {
         CheckBox check19 = findViewById(R.id.all);
         if (check19.isChecked()) {
             cuisinelist.add("all");
+        }
+        CheckBox check20 = findViewById(R.id.Japanese);
+        if (check20.isChecked()) {
+            cuisinelist.add("japanese");
+        }
+        CheckBox check21 = findViewById(R.id.Rassian);
+        if (check21.isChecked()) {
+            cuisinelist.add("russian");
         }
         intent.putExtra(Main2Activity.FOODLIST, foodlist);
         intent.putExtra(Main3Activity.CATLIST, catlist);

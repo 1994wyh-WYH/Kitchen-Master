@@ -22,7 +22,7 @@ public class SeaFood {
 			File file=new File("seafoods.txt");
 			Scanner in=new Scanner(file);
 			while(in.hasNextLine()) {
-				seaFoods.add(in.nextLine());
+				seaFoods.add(in.nextLine().toLowerCase());
 			}
 			in.close();
 		}

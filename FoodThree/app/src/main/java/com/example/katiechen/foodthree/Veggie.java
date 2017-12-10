@@ -22,7 +22,7 @@ public class Veggie {
 			File file=new File("");
 			Scanner in=new Scanner(file);
 			while(in.hasNextLine()) {
-				veggies.add(in.nextLine());
+				veggies.add(in.nextLine().toLowerCase());
 			}
 			in.close();
 		}
