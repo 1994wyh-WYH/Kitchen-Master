@@ -29,7 +29,8 @@
             android:name=".Main8Activity"
             android:label="@string/title_activity_main8"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Main9Activity"></activity>
+        <activity android:name=".Main9Activity" />
+        <activity android:name=".Adapterr" />
     </application>
 
 </manifest>

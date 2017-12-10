@@ -12,7 +12,7 @@ import org.json.JSONException;
  *
  */
 public class IngredientList {
-	private static ArrayList<Ingredient> ingredientList;
+	private ArrayList<Ingredient> ingredientList=new ArrayList<>();
 	
 	/**
 	 * This is the constructor.
@@ -20,26 +20,26 @@ public class IngredientList {
 	 * @throws IOException
 	 */
 	public IngredientList() throws JSONException, IOException {
-		ingredientList=new ArrayList<>();
-		ArrayList<Recipe> rs=RecipeList.getRecipes();
-		ArrayList<String> ingredients=new ArrayList<>();
-		for(Recipe r:rs) {
-			ArrayList<String> i=r.getIngredients();
-			for(String name:i) {
-			if(!ingredients.contains(name)) {
-				ingredients.add(name);
-				Ingredient temp=new Ingredient(name);
-				ingredientList.add(temp);
-				}
-			}
-		}
-		
+
+//		ArrayList<Recipe> rs=RecipeList.getRecipes();
+//		ArrayList<String> ingredients=new ArrayList<>();
+//		for(Recipe r:rs) {
+//			ArrayList<String> i=r.getIngredients();
+//			for(String name:i) {
+//			if(!ingredients.contains(name)) {
+//				ingredients.add(name);
+//				Ingredient temp=new Ingredient(name);
+//				ingredientList.add(temp);
+//				}
+//			}
+//		}
+//
 	}
 
 	/**
 	 * @return the ingredientList
 	 */
-	public static ArrayList<Ingredient> getIngredientList() {
+	public ArrayList<Ingredient> getIngredientList() {
 		return ingredientList;
 	}
 	

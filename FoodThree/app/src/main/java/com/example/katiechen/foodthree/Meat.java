@@ -20,7 +20,7 @@ public class Meat {
 			File file=new File("");
 			Scanner in=new Scanner(file);
 			while(in.hasNextLine()) {
-				meats.add(in.nextLine());
+				meats.add(in.nextLine().toLowerCase());
 			}
 			in.close();
 		}

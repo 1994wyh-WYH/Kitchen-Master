@@ -14,10 +14,10 @@ public class Carb {
 	public Carb() {
 		carbs=new ArrayList<>();
 		try {
-			File file=new File("");
+			File file=new File("carbs.txt");
 			Scanner in=new Scanner(file);
 			while(in.hasNextLine()) {
-				carbs.add(in.nextLine());
+				carbs.add(in.nextLine().toLowerCase());
 			}
 			in.close();
 		}

@@ -21,7 +21,7 @@ private static ArrayList<String> dairies;
 			File file=new File("");
 			Scanner in=new Scanner(file);
 			while(in.hasNextLine()) {
-				dairies.add(in.nextLine());
+				dairies.add(in.nextLine().toLowerCase());
 			}
 			in.close();
 		}
