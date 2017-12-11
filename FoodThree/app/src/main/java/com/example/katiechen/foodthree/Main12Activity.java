@@ -1,10 +1,16 @@
 package com.example.katiechen.foodthree;
 
 import android.content.Intent;
+import android.os.Parcelable;
 import android.support.annotation.NonNull;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -18,14 +24,17 @@ import java.util.Comparator;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Main8Activity extends AppCompatActivity {
+public class Main12Activity extends AppCompatActivity {
     public ArrayList<String> ingredientsList;
     public String orderby;
+    public ArrayList<FullRecipe> result;
+    public static final String RESULT ="RESULT";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main8);
+        setContentView(R.layout.activity_main12);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         ingredientsList = getIntent().getStringArrayListExtra(Main6Activity.INGREDIENTS);
         orderby = getIntent().getStringExtra(Main7Activity.ORDERBY);
         InputStream in = getResources().openRawResource(R.raw.full_format_recipes);
@@ -33,14 +42,19 @@ public class Main8Activity extends AppCompatActivity {
             FullRecipeList fr = new FullRecipeList(in);
             ArrayList<FullRecipe> rs = fr.getFullRecipes();
             System.out.println(orderby);
-            ArrayList<FullRecipe> result = findFullRecipe(rs,ingredientsList,orderby);
-            LinearLayout ll = (LinearLayout) findViewById(R.id.crappy_list);
-            ll.removeAllViews();
-            for(FullRecipe fc: result) {
-                View view = getListItemView(fc);
-                ll.addView(view);
-            }
-//            for (FullRecipe fc: result) {
+            result = findFullRecipe(rs,ingredientsList,orderby);
+            BlankFragment.res = result;
+//            Bundle bundle = new Bundle();
+//            bundle.putSerializable(RESULT, result);
+//            Fragment fragment = new BlankFragment();
+//            fragment.setArguments(bundle);
+//            LinearLayout ll = (LinearLayout) findViewById(R.id.crappy_list);
+//            ll.removeAllViews();
+//            for(FullRecipe fc: result) {
+//                View view = getListItemView(fc);
+//                ll.addView(view);
+//            }
+////            for (FullRecipe fc: result) {
 //                System.out.println(fc.getTitle());
 //                System.out.println(fc.getDate());
 //                System.out.println(fc.getCalories());
@@ -55,28 +69,49 @@ public class Main8Activity extends AppCompatActivity {
         } catch (Exception e){
             //((TextView) findViewById(R.id.showrecipe)).setText(("trouble reading JSON"));
         }
+        System.out.println("111");
+        ViewPager viewPager = (ViewPager) findViewById(R.id.view_pager);
+        System.out.println("2222");
+        viewPager.setAdapter(new NumberPagerAdapter(getSupportFragmentManager()));
+        System.out.println("333");
 
     }
-
-    @NonNull
-    private View getListItemView(@NonNull FullRecipe r) {
-        View view = getLayoutInflater().inflate(R.layout.content_main8, null);
-        ((TextView)view.findViewById(R.id.title)).setText("Title: " + r.getTitle());
-        ((TextView)view.findViewById(R.id.date)).setText("Date: "+r.getDate());
-        ((TextView)view.findViewById(R.id.rating)).setText("Rating: " + r.getRating().toString());
-        ((TextView)view.findViewById(R.id.Fat)).setText("Fat: " + r.getFat().toString());
-
-        ((TextView)view.findViewById(R.id.Calories)).setText("Calories: " + r.getCalories().toString());
-
-        ((TextView)view.findViewById(R.id.Protein)).setText("Protein: " + r.getProtein().toString());
-
-        ((TextView)view.findViewById(R.id.ingredients)).setText("Ingredients: " + r.getIngredients().toString());
-
-        if(r.getDescription()!=null && r.getDescription().length() > 0) {
-            ((TextView)view.findViewById(R.id.description)).setText("Description: " + r.getDescription().toString());
+    private class NumberPagerAdapter extends FragmentPagerAdapter {
+        public NumberPagerAdapter(FragmentManager fm) {
+            super(fm);
         }
-        return view;
+
+        @Override
+        public Fragment getItem(int position) {
+            return BlankFragment.newInstance(position);
+        }
+
+        @Override
+        public int getCount() {
+            System.out.println("main result size: " + result.size());
+            return result.size();
+        }
     }
+
+//    @NonNull
+//    private View getListItemView(@NonNull FullRecipe r) {
+//        View view = getLayoutInflater().inflate(R.layout.content_main8, null);
+//        ((TextView)view.findViewById(R.id.title)).setText("Title: " + r.getTitle());
+//        ((TextView)view.findViewById(R.id.date)).setText("Date: "+r.getDate());
+//        ((TextView)view.findViewById(R.id.rating)).setText("Rating: " + r.getRating().toString());
+//        ((TextView)view.findViewById(R.id.Fat)).setText("Fat: " + r.getFat().toString());
+//
+//        ((TextView)view.findViewById(R.id.Calories)).setText("Calories: " + r.getCalories().toString());
+//
+//        ((TextView)view.findViewById(R.id.Protein)).setText("Protein: " + r.getProtein().toString());
+//
+//        ((TextView)view.findViewById(R.id.ingredients)).setText("Ingredients: " + r.getIngredients().toString());
+//
+//        if(r.getDescription()!=null && r.getDescription().length() > 0) {
+//            ((TextView)view.findViewById(R.id.description)).setText("Description: " + r.getDescription().toString());
+//        }
+//        return view;
+//    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

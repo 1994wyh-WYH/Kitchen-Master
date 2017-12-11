@@ -44,15 +44,31 @@ public class Main6Activity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         foodlist = getIntent().getStringArrayListExtra(Main2Activity.FOODLIST);
-
-
+        String food = "";
+        for(String f:foodlist) {
+            food = food + f + " ";
+        }
+        String category = "";
         catlist = getIntent().getStringArrayListExtra(Main3Activity.CATLIST);
-
-
+        if(catlist.contains("all")) {
+            category = "Ingredients";
+        } else {
+            for(String cat:catlist) {
+                category += cat + " ";
+            }
+        }
+        String cuisine = "";
         cuisinelist = getIntent().getStringArrayListExtra(Main4Activity.CUISINE);
+        if(cuisinelist.contains("all")) {
+            cuisine = "All Cuisine ";
+        } else {
+            for(String cuis:cuisinelist) {
+                cuisine += cuis + " ";
+            }
+        }
 
         rank = getIntent().getStringExtra(Main5Activity.RANK);
-        ((TextView) findViewById(R.id.showfood)).setText("The Top " + rank.toString() +  catlist.toString() + " Go With " +foodlist.toString() + " Among "+ cuisinelist.toString());
+        ((TextView) findViewById(R.id.showfood)).setText("The Top " + rank.toString() + " "+  category + " Go With " + food + " Among "+ cuisine + " Are: ");
 //        ((TextView) findViewById(R.id.showcat)).setText(catlist.toString());
 //        ((TextView) findViewById(R.id.showcuisine)).setText(cuisinelist.toString());
 //        ((TextView) findViewById(R.id.rank)).setText(rank.toString());
@@ -61,7 +77,7 @@ public class Main6Activity extends AppCompatActivity {
 
         try{
             TestClass tc = new TestClass();
-            ((TextView) findViewById(R.id.showtest)).setText(tc.getText());
+            //((TextView) findViewById(R.id.showtest)).setText(tc.getText());
         } catch(Exception e){
         }
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
@@ -71,19 +87,21 @@ public class Main6Activity extends AppCompatActivity {
         try {
             FullRecipeList fr = new FullRecipeList(in);
             ArrayList<FullRecipe> rs = fr.getFullRecipes();
-            ((TextView) findViewById(R.id.showtest)).setText("nitama");
             RecipeList rlc=new RecipeList(in2);
             ArrayList<Recipe> rl=rlc.getRecipes();
             final ArrayList<String> res = findTop(rl, foodlist,catlist,cuisinelist,Integer.parseInt(rank));
-            ((TextView) findViewById(R.id.showrecipe)).setText(res.toString());
+//            ((TextView) findViewById(R.id.showrecipe)).setText(res.toString());
 //            LinearLayout ll = (LinearLayout) findViewById(R.id.crappy_list);
 //            ll.removeAllViews();
 //            for(String r:res) {
 //                View view = getListItemView(r);
 //                ll.addView(view);
 //            }
-            if(res.size() == 1) {
-                ((CheckBox)findViewById(R.id.check1)).setText(res.get(0).toString());
+            System.out.println(res.size());
+            if(res.size() == 0) {
+                ((TextView)findViewById(R.id.Error)).setText("Oooops!\n Cannot Find Ingredient!\n Please Go Back to Input Again!");
+                LinearLayout ll4 = (LinearLayout) findViewById(R.id.layout1);
+                ll4.removeAllViews();
                 LinearLayout ll = (LinearLayout) findViewById(R.id.layout3);
                 ll.removeAllViews();
                 LinearLayout ll2 = (LinearLayout) findViewById(R.id.layout4);
@@ -91,10 +109,27 @@ public class Main6Activity extends AppCompatActivity {
                 LinearLayout ll3 = (LinearLayout) findViewById(R.id.layout5);
                 ll3.removeAllViews();
                 LinearLayout ll1 = (LinearLayout) findViewById(R.id.layout2);
+                ll1.removeAllViews();
+                LinearLayout llend = (LinearLayout) findViewById(R.id.layoutend);
+                llend.removeAllViews();
+            }
+            if(res.size() == 1) {
+                ((CheckBox)findViewById(R.id.check1)).setText("Top 1: " + res.get(0).toString());
+                LinearLayout lll = (LinearLayout) findViewById(R.id.layout12);
+                lll.removeAllViews();
+                LinearLayout ll = (LinearLayout) findViewById(R.id.layout3);
                 ll.removeAllViews();
+                LinearLayout ll2 = (LinearLayout) findViewById(R.id.layout4);
+                ll2.removeAllViews();
+                LinearLayout ll3 = (LinearLayout) findViewById(R.id.layout5);
+                ll3.removeAllViews();
+                LinearLayout ll1 = (LinearLayout) findViewById(R.id.layout2);
+                ll1.removeAllViews();
             } else if(res.size() == 2) {
-                ((CheckBox)findViewById(R.id.check1)).setText(res.get(0).toString());
-                ((CheckBox)findViewById(R.id.check2)).setText(res.get(1).toString());
+                ((CheckBox)findViewById(R.id.check1)).setText("Top 1: " + res.get(0).toString());
+                ((CheckBox)findViewById(R.id.check2)).setText("Top 2: " +res.get(1).toString());
+                LinearLayout lll = (LinearLayout) findViewById(R.id.layout12);
+                lll.removeAllViews();
                 LinearLayout ll = (LinearLayout) findViewById(R.id.layout3);
                 ll.removeAllViews();
                 LinearLayout ll2 = (LinearLayout) findViewById(R.id.layout4);
@@ -102,26 +137,32 @@ public class Main6Activity extends AppCompatActivity {
                 LinearLayout ll3 = (LinearLayout) findViewById(R.id.layout5);
                 ll3.removeAllViews();
             } else if(res.size() == 3) {
-                ((CheckBox)findViewById(R.id.check1)).setText(res.get(0).toString());
-                ((CheckBox)findViewById(R.id.check2)).setText(res.get(1).toString());
-                ((CheckBox)findViewById(R.id.check3)).setText(res.get(2).toString());
+                ((CheckBox)findViewById(R.id.check1)).setText("Top 1: " +res.get(0).toString());
+                ((CheckBox)findViewById(R.id.check2)).setText("Top 2: " +res.get(1).toString());
+                ((CheckBox)findViewById(R.id.check3)).setText("Top 3: " +res.get(2).toString());
+                LinearLayout lll = (LinearLayout) findViewById(R.id.layout12);
+                lll.removeAllViews();
                 LinearLayout ll2 = (LinearLayout) findViewById(R.id.layout4);
                 ll2.removeAllViews();
                 LinearLayout ll3 = (LinearLayout) findViewById(R.id.layout5);
                 ll3.removeAllViews();
             } else if(res.size() == 4) {
-                ((CheckBox)findViewById(R.id.check1)).setText(res.get(0).toString());
-                ((CheckBox)findViewById(R.id.check2)).setText(res.get(1).toString());
-                ((CheckBox)findViewById(R.id.check3)).setText(res.get(2).toString());
-                ((CheckBox)findViewById(R.id.check4)).setText(res.get(3).toString());
+                ((CheckBox)findViewById(R.id.check1)).setText("Top 1: " +res.get(0).toString());
+                ((CheckBox)findViewById(R.id.check2)).setText("Top 2: " +res.get(1).toString());
+                ((CheckBox)findViewById(R.id.check3)).setText("Top 3: " +res.get(2).toString());
+                ((CheckBox)findViewById(R.id.check4)).setText("Top 4: " +res.get(3).toString());
+                LinearLayout lll = (LinearLayout) findViewById(R.id.layout12);
+                lll.removeAllViews();
                 LinearLayout ll3 = (LinearLayout) findViewById(R.id.layout5);
                 ll3.removeAllViews();
             } else {
-                ((CheckBox)findViewById(R.id.check1)).setText(res.get(0).toString());
-                ((CheckBox)findViewById(R.id.check2)).setText(res.get(1).toString());
-                ((CheckBox)findViewById(R.id.check3)).setText(res.get(2).toString());
-                ((CheckBox)findViewById(R.id.check4)).setText(res.get(3).toString());
-                ((CheckBox)findViewById(R.id.check5)).setText(res.get(4).toString());
+                ((CheckBox)findViewById(R.id.check1)).setText("Top 1: " +res.get(0).toString());
+                ((CheckBox)findViewById(R.id.check2)).setText("Top 2: " +res.get(1).toString());
+                ((CheckBox)findViewById(R.id.check3)).setText("Top 3: " +res.get(2).toString());
+                ((CheckBox)findViewById(R.id.check4)).setText("Top 4: " +res.get(3).toString());
+                ((CheckBox)findViewById(R.id.check5)).setText("Top 5: " +res.get(4).toString());
+                LinearLayout lll = (LinearLayout) findViewById(R.id.layout12);
+                lll.removeAllViews();
             }
             Button startButton = findViewById(R.id.bbb);
             startButton.setOnClickListener(new View.OnClickListener() {
@@ -133,15 +174,22 @@ public class Main6Activity extends AppCompatActivity {
                 }
             });
         } catch (Exception e){
-            ((TextView) findViewById(R.id.showrecipe)).setText(("trouble reading JSON"));
+            ((TextView)findViewById(R.id.Error)).setText("Oooops!\n Cannot Find Ingredient!\n Please Go Back to Input Again!");
+            LinearLayout llend = (LinearLayout) findViewById(R.id.layoutend);
+            llend.removeAllViews();
+            LinearLayout ll4 = (LinearLayout) findViewById(R.id.layout1);
+            ll4.removeAllViews();
+            LinearLayout ll = (LinearLayout) findViewById(R.id.layout3);
+            ll.removeAllViews();
+            LinearLayout ll2 = (LinearLayout) findViewById(R.id.layout4);
+            ll2.removeAllViews();
+            LinearLayout ll3 = (LinearLayout) findViewById(R.id.layout5);
+            ll3.removeAllViews();
+            LinearLayout ll1 = (LinearLayout) findViewById(R.id.layout2);
+            ll1.removeAllViews();
         }
     }
-//    @NonNull
-//    private View getListItemView(@NonNull String r) {
-//        View view = getLayoutInflater().inflate(R.layout.content_main8, null);
-//        ((TextView)view.findViewById(R.id.check)).setText(r.toString());
-//        return view;
-//    }
+
 
     public void setData(Intent intent, ArrayList<String> result) {
         CheckBox check1 = findViewById(R.id.check1);
@@ -224,10 +272,9 @@ public class Main6Activity extends AppCompatActivity {
     }
     public static ArrayList<String> findTopN(HashMap<String, Integer> map, int top, Comparator comparator) {
         ArrayList<Map.Entry<String, Integer>> list = new ArrayList(map.entrySet());
-//		System.out.println(list.size());
         Collections.sort(list, comparator);
         ArrayList<String> result = new ArrayList<>();
-        for (int i = 0; i < top; i++) {
+        for (int i = 0; i < top && i < list.size(); i++) {
             result.add(list.get(i).getKey());
         }
         return result;

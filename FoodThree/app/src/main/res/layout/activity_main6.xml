@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
+    android:background="@drawable/ggg"
     tools:context="com.example.katiechen.foodthree.MainActivity">
 
     <!--<TextView-->
@@ -38,14 +39,25 @@
         <!--android:text=" Go With "-->
         <!--android:textStyle="bold"-->
         <!--/>-->
-
-    <TextView
-        android:id="@+id/showfood"
-        android:layout_marginTop="10dp"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textStyle="bold"
-        />
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:id="@+id/showfood"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            />
+
+    </LinearLayout>
+
+
 
     <!--<TextView-->
         <!--android:layout_marginTop="10dp"-->
@@ -71,21 +83,21 @@
         <!--android:textStyle="bold"-->
         <!--/>-->
 
-    <TextView
-        android:id="@+id/showtest"
-        android:layout_marginTop="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textStyle="bold"
-        />
+    <!--<TextView-->
+        <!--android:id="@+id/showtest"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textStyle="bold"-->
+        <!--/>-->
 
-    <TextView
-        android:id="@+id/showrecipe"
-        android:layout_marginTop="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textStyle="bold"
-        />
+    <!--<TextView-->
+        <!--android:id="@+id/showrecipe"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textStyle="bold"-->
+        <!--/>-->
 
     <!--<ScrollView-->
         <!--android:layout_width="match_parent"-->
@@ -125,7 +137,7 @@
             android:id="@+id/check2"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:background="@drawable/bt1"
+            android:background="@drawable/bt4"
             android:textAllCaps="true"
             android:textColor="#fff"
             android:textSize="20sp"
@@ -154,7 +166,6 @@
     </LinearLayout>
     <LinearLayout
         android:layout_marginTop="10dp"
-
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -163,7 +174,7 @@
             android:id="@+id/check4"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:background="@drawable/bt1"
+            android:background="@drawable/bt4"
             android:textAllCaps="true"
             android:textColor="#fff"
             android:textSize="20sp"
@@ -191,14 +202,41 @@
             />
     </LinearLayout>
 
-
-    <Button
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:id="@+id/layout12">
+        <TextView
+            android:id="@+id/Error"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:background="@drawable/bt3"
+            android:textAllCaps="true"
+            android:textColor="#fff"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:id="@+id/layoutend">
+    <Button
+        android:layout_marginBottom="10dp"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="@drawable/bt6"
+        android:textColor="#fff"
+        android:textSize="25sp"
+        android:textStyle="bold"
         android:id="@+id/bbb"
-        android:text="Go"/>
-
+        android:text="Go to find Full Recipe"/>
+    </LinearLayout>
 
 </LinearLayout>
