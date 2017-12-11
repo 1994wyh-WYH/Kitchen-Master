@@ -25,10 +25,6 @@
         <activity android:name=".Main3Activity" />
         <activity android:name=".Main6Activity" />
         <activity android:name=".Main7Activity" />
-        <activity
-            android:name=".Main8Activity"
-            android:label="@string/title_activity_main8"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Main9Activity" />
         <activity android:name=".Adapterr" />
         <activity android:name=".Main10Activity" />
