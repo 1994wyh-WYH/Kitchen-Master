@@ -99,6 +99,7 @@ public class Main6Activity extends AppCompatActivity {
 //            }
             System.out.println(res.size());
             if(res.size() == 0) {
+                System.out.println("1111aaa");
                 ((TextView)findViewById(R.id.Error)).setText("Oooops!\n Cannot Find Ingredient!\n Please Go Back to Input Again!");
                 LinearLayout ll4 = (LinearLayout) findViewById(R.id.layout1);
                 ll4.removeAllViews();
@@ -174,6 +175,7 @@ public class Main6Activity extends AppCompatActivity {
                 }
             });
         } catch (Exception e){
+            System.out.println("222aaa");
             ((TextView)findViewById(R.id.Error)).setText("Oooops!\n Cannot Find Ingredient!\n Please Go Back to Input Again!");
             LinearLayout llend = (LinearLayout) findViewById(R.id.layoutend);
             llend.removeAllViews();

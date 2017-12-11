@@ -12,7 +12,7 @@
     <!--默认背景-->
     <item>
         <shape>
-            <solid android:color="@color/r2" />
+            <solid android:color="@color/r4" />
             <corners android:radius="20dp" />
         </shape>
     </item>

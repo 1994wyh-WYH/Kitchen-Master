@@ -51,15 +51,15 @@ public class Main2Activity extends AppCompatActivity {
     private void setData(Intent intent) {
         foodlist = new ArrayList<>();
         if(((EditText) findViewById(R.id.food1)).getText().toString().length()>0) {
-            foodlist.add(((EditText) findViewById(R.id.food1)).getText().toString());
+            foodlist.add(((EditText) findViewById(R.id.food1)).getText().toString().toLowerCase());
             System.out.println("1");
         }
         if(((EditText) findViewById(R.id.food2)).getText().toString().length()>0) {
-            foodlist.add(((EditText) findViewById(R.id.food2)).getText().toString());
+            foodlist.add(((EditText) findViewById(R.id.food2)).getText().toString().toLowerCase());
             System.out.println("2");
         }
         if(((EditText) findViewById(R.id.food3)).getText().toString().length()>0) {
-            foodlist.add(((EditText) findViewById(R.id.food3)).getText().toString());
+            foodlist.add(((EditText) findViewById(R.id.food3)).getText().toString().toLowerCase());
             System.out.println("3");
         }
         intent.putExtra(FOODLIST, foodlist);
