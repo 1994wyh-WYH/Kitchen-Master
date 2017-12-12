@@ -3,7 +3,11 @@ package KitchenMaster;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Scanner;
-
+/**
+ * This class forms an arraylist of all fruits for future use.
+ * @author Yihan
+ *
+ */
 public class Fruit {
 	private static ArrayList<String> fruits;
 	/**

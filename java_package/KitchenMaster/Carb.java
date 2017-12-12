@@ -11,10 +11,13 @@ import java.util.Scanner;
 public class Carb {
 	private static ArrayList<String> carbs;
 	
+	/**
+	 * This is the constructor.
+	 */
 	public Carb() {
 		carbs=new ArrayList<>();
 		try {
-			File file=new File();
+			File file=new File("carbs.txt");
 			Scanner in=new Scanner(file);
 			while(in.hasNextLine()) {
 				carbs.add(in.nextLine().toLowerCase());
