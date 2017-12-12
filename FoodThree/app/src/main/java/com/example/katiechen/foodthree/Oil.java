@@ -17,7 +17,7 @@ public class Oil {
 	public Oil() {
 		oils=new ArrayList<>();
 		try {
-			File file=new File("");
+			File file=new File("oils.txt");
 			Scanner in=new Scanner(file);
 			while(in.hasNextLine()) {
 				oils.add(in.nextLine().toLowerCase());
@@ -33,7 +33,7 @@ public class Oil {
 	 * This method returns the oil list.
 	 * @return an arraylist of oils
 	 */
-	public static ArrayList<String> getOils() {
+	public ArrayList<String> getOils() {
 		return oils;
 	}
 

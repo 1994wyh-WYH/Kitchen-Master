@@ -18,7 +18,7 @@ private static ArrayList<String> others;
 	public Other() {
 		others=new ArrayList<>();
 		try {
-			File file=new File("");
+			File file=new File("others.txt");
 			Scanner in=new Scanner(file);
 			while(in.hasNextLine()) {
 				others.add(in.nextLine().toLowerCase());
@@ -34,7 +34,7 @@ private static ArrayList<String> others;
 	 * This method returns other kinds of foods' list.
 	 * @return an arraylist of other kinds of foods.
 	 */
-	public static ArrayList<String> getOthers() {
+	public ArrayList<String> getOthers() {
 		return others;
 	}
 }

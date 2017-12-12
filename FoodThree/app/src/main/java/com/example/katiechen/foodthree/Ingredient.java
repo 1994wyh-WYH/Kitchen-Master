@@ -11,57 +11,62 @@ public class Ingredient {
 	public Ingredient(String name) {
 		this.name = name;
 		
-		for(String temp:Carb.getCarbs()) {
-			if(temp.equals(name)) {
-				this.category="Carb";
-			}
-		}
-		
-		for(String temp:Dairy.getDairies()) {
-			if(temp.equals(name)) {
-				this.category="Dairy";
-			}
-		}
-		
-		for(String temp:Meat.getMeats()) {
-			if(temp.equals(name)) {
+		Meat meat=new Meat();
+		for(String temp:meat.getMeats()) {
+			if(name.contains(temp)) {
 				this.category="Meat";
 			}
 		}
-		
-		for(String temp:Oil.getOils()) {
-			if(temp.equals(name)) {
+		Oil oil=new Oil();
+		for(String temp:oil.getOils()) {
+			if(name.contains(temp)) {
 				this.category="Oil";
 			}
 		}
-		for(String temp:Other.getOthers()) {
-			if(temp.equals(name)) {
-				this.category="Other";
+		Dairy dairy=new Dairy();
+		for(String temp:dairy.getDairies()) {
+			if(name.contains(temp)) {
+				this.category="Dairy";
 			}
 		}
-		
-		for(String temp:SeaFood.getSeaFoods()) {
-			if(temp.equals(name)) {
+		SeaFood seafood=new SeaFood();
+		for(String temp:seafood.getSeaFoods()) {
+			if(name.contains(temp)) {
 				this.category="Sea Food";
 			}
 		}
-		
-		for(String temp:Seasoning.getSeasonings()) {
-			if(temp.equals(name)) {
-				this.category="Seasoning";
-			}
-		}
-		
-		for(String temp:Veggie.getVeggies()) {
-			if(temp.equals(name)) {
+		Veggie veggie=new Veggie();
+		for(String temp:veggie.getVeggies()) {
+			if(name.contains(temp)) {
 				this.category="Veggie";
 			}
 		}
-		
-		for(String temp:Fruit.getFruits()) {
-			if(temp.equals(name)) {
+		Carb carb=new Carb();
+		for(String temp:carb.getCarbs()) {
+			if(name.contains(temp)) {
+				this.category="Carb";
+			}
+		}
+		Fruit fruit=new Fruit();
+		for(String temp:fruit.getFruits()) {
+			if(name.contains(temp)) {
 				this.category="Fruit";
 			}
+		}
+		Seasoning seasoning=new Seasoning();
+		for(String temp:seasoning.getSeasonings()) {
+			if(name.contains(temp)) {
+				this.category="Seasoning";
+			}
+		}
+		Other other=new Other();
+		for(String temp:other.getOthers()) {
+			if(name.contains(temp)) {
+				this.category="Other";
+			}
+		}
+		if(category==null) {
+			this.category="Other";
 		}
 	}
 

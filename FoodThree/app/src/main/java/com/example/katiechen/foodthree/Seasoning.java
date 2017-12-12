@@ -1,5 +1,4 @@
 package com.example.katiechen.foodthree;
-
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -17,7 +16,7 @@ public class Seasoning {
 	public Seasoning() {
 		seasonings=new ArrayList<>();
 		try {
-			File file=new File("");
+			File file=new File("seasonings.txt");
 			Scanner in=new Scanner(file);
 			while(in.hasNextLine()) {
 				seasonings.add(in.nextLine().toLowerCase());
@@ -33,7 +32,7 @@ public class Seasoning {
 	 * This method returns the seasoning list.
 	 * @return an arraylist of seasonings
 	 */
-	public static ArrayList<String> getSeasonings() {
+	public ArrayList<String> getSeasonings() {
 		return seasonings;
 	}
 }

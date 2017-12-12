@@ -1,7 +1,7 @@
 package com.example.katiechen.foodthree;
 
-
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 
 import org.json.JSONException;
@@ -12,7 +12,7 @@ import org.json.JSONException;
  *
  */
 public class IngredientList {
-	private ArrayList<Ingredient> ingredientList=new ArrayList<>();
+	private static ArrayList<Ingredient> ingredientList;
 	
 	/**
 	 * This is the constructor.
@@ -20,20 +20,21 @@ public class IngredientList {
 	 * @throws IOException
 	 */
 	public IngredientList() throws JSONException, IOException {
-
-//		ArrayList<Recipe> rs=RecipeList.getRecipes();
-//		ArrayList<String> ingredients=new ArrayList<>();
-//		for(Recipe r:rs) {
-//			ArrayList<String> i=r.getIngredients();
-//			for(String name:i) {
-//			if(!ingredients.contains(name)) {
-//				ingredients.add(name);
-//				Ingredient temp=new Ingredient(name);
-//				ingredientList.add(temp);
-//				}
-//			}
-//		}
-//
+		ingredientList=new ArrayList<>();
+		RecipeList rl=new RecipeList();
+		ArrayList<Recipe> rs=rl.getRecipes();
+		ArrayList<String> ingredients=new ArrayList<>();
+		for(Recipe r:rs) {
+			ArrayList<String> i=r.getIngredients();
+			for(String name:i) {
+			if(!ingredients.contains(name)) {
+				ingredients.add(name);
+				Ingredient temp=new Ingredient(name);
+				ingredientList.add(temp);
+				}
+			}
+		}
+		
 	}
 
 	/**

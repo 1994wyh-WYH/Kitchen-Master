@@ -1,5 +1,4 @@
 package com.example.katiechen.foodthree;
-
 import java.util.ArrayList;
 /**
  * This class constructs the recipe object.

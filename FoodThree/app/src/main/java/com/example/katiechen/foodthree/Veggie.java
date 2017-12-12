@@ -1,5 +1,4 @@
 package com.example.katiechen.foodthree;
-
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -19,7 +18,7 @@ public class Veggie {
 	public Veggie() {
 		veggies=new ArrayList<>();
 		try {
-			File file=new File("");
+			File file=new File("veggies.txt");
 			Scanner in=new Scanner(file);
 			while(in.hasNextLine()) {
 				veggies.add(in.nextLine().toLowerCase());
@@ -35,7 +34,7 @@ public class Veggie {
 	 * This method returns the veggie list.
 	 * @return an arraylist of veggies
 	 */
-	public static ArrayList<String> getVeggies() {
+	public ArrayList<String> getVeggies() {
 		return veggies;
 	}
 }
