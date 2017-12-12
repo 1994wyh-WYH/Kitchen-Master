@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/ggg"
     android:padding="16dp">
 
 
@@ -58,7 +59,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/bt1"
         android:layout_weight="1"
-        android:text="Rating hight to low"
+        android:text="Rating high to low"
         android:textColor="#fff"
         android:textSize="30sp"
         android:textStyle="bold" />
@@ -103,7 +104,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/bt6"
-        android:text="Protein hight to low"
+        android:text="Protein high to low"
         android:layout_weight="1"
         android:textColor="#fff"
         android:textSize="30sp"
