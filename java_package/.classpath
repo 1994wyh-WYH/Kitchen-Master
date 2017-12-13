@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<classpath>
-	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="src" path=""/>
-	<classpathentry kind="lib" path="gson-2.8.2-javadoc.jar"/>
-	<classpathentry kind="lib" path="gson-2.8.2.jar"/>
-	<classpathentry kind="lib" path="java-json.jar"/>
-	<classpathentry kind="output" path=""/>
-</classpath>
