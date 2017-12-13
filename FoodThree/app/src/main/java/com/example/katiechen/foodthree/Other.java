@@ -1,6 +1,7 @@
 package com.example.katiechen.foodthree;
 
 import java.io.File;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -15,11 +16,11 @@ private static ArrayList<String> others;
 	/**
 	 * This is the constructor of the class.
 	 */
-	public Other() {
+	public Other(InputStream inp) {
 		others=new ArrayList<>();
 		try {
-			File file=new File("");
-			Scanner in=new Scanner(file);
+			//File file=new File("others.txt");
+			Scanner in=new Scanner(inp);
 			while(in.hasNextLine()) {
 				others.add(in.nextLine().toLowerCase());
 			}

@@ -68,13 +68,22 @@ public class Main6Activity extends AppCompatActivity {
         StrictMode.setThreadPolicy(policy);
         InputStream in = getResources().openRawResource(R.raw.full_format_recipes);
         InputStream in2 = getResources().openRawResource(R.raw.train);
+        //InputStream carbi = getResources().openRawResource(R.raw.carbs);
+        Resources reso = getResources();
         try {
             FullRecipeList fr = new FullRecipeList(in);
             ArrayList<FullRecipe> rs = fr.getFullRecipes();
-            ((TextView) findViewById(R.id.showtest)).setText("nitama");
             RecipeList rlc=new RecipeList(in2);
             ArrayList<Recipe> rl=rlc.getRecipes();
-            final ArrayList<String> res = findTop(rl, foodlist,catlist,cuisinelist,Integer.parseInt(rank));
+            ((TextView) findViewById(R.id.showtest)).setText(foodlist.get(0));
+            ((TextView) findViewById(R.id.showtest2)).setText(catlist.get(0));
+            ((TextView) findViewById(R.id.showtest3)).setText(cuisinelist.get(0));
+
+            final ArrayList<String> res = findTop(rl, foodlist,catlist,cuisinelist,Integer.parseInt(rank), reso);
+
+            if(res.size()==0){
+                ((TextView) findViewById(R.id.showtest)).setText("no recipe found!");
+            }
             ((TextView) findViewById(R.id.showrecipe)).setText(res.toString());
 //            LinearLayout ll = (LinearLayout) findViewById(R.id.crappy_list);
 //            ll.removeAllViews();
@@ -133,7 +142,8 @@ public class Main6Activity extends AppCompatActivity {
                 }
             });
         } catch (Exception e){
-            ((TextView) findViewById(R.id.showrecipe)).setText(("trouble reading JSON"));
+            //((TextView) findViewById(R.id.showtest)).setText("nitama5");
+            //((TextView) findViewById(R.id.showrecipe)).setText(("trouble reading JSON"));
         }
     }
 //    @NonNull
@@ -188,16 +198,16 @@ public class Main6Activity extends AppCompatActivity {
         intent.putExtra(INGREDIENTS, ingredientsList);
         System.out.println("yes77");
     }
-    public static ArrayList<String> findTop(ArrayList<Recipe> rl,ArrayList<String> foodInput, ArrayList<String> type, ArrayList<String> cuisine, int top) throws JSONException, IOException  {
+    public static ArrayList<String> findTop(ArrayList<Recipe> rl,ArrayList<String> foodInput, ArrayList<String> type, ArrayList<String> cuisine, int top, Resources reso) throws JSONException, IOException  {
         HashMap<String, Integer> map = new HashMap<>();
         for(Recipe recipe:rl) {
-            if(checkCuisine(cuisine,recipe.getCuisine())) {
+            if(checkCuisine(cuisine,recipe.getCuisine().toLowerCase())) {
                 ArrayList<String> ingredientsList = recipe.getIngredients();
                 if(checkContains(foodInput, ingredientsList)) {
                     System.out.println(ingredientsList);
                     for(String ingredient:ingredientsList) {
                         if(!foodInput.contains(ingredient)) {
-                            if(checkType(type, ingredient)) {
+                            if(checkType(type, ingredient, reso)) {
                                 if(map.containsKey(ingredient)) {
                                     map.put(ingredient, map.get(ingredient)+1);
                                 } else {
@@ -253,62 +263,93 @@ public class Main6Activity extends AppCompatActivity {
         }
     }
 
-    public static boolean checkType(ArrayList<String> typeList, String ingredient) {
+    public static boolean checkType(ArrayList<String> typeList, String ingredient, Resources res) {
         if(typeList.contains("all")) {
             return true;
         }
+
         if(typeList.contains("carb")) {
-            Carb carb = new Carb();
-            if(carb.getCarbs().contains(ingredient)) {
-                return true;
+            InputStream carbi = res.openRawResource(R.raw.carbs);
+            Carb carb = new Carb(carbi);
+            for(String c:carb.getCarbs()){
+                if (ingredient.contains(c) || c.contains(ingredient)) {
+                    return true;
+                }
             }
+//            if(carb.getCarbs().contains(ingredient)) {
+//                return true;
+//            }
         }
         if(typeList.contains("dairy")) {
-            Dairy dairy = new Dairy();
-            if(dairy.getDairies().contains(ingredient)) {
-                return true;
+            InputStream dairyi=res.openRawResource(R.raw.dairies);
+            Dairy dairy = new Dairy(dairyi);
+            for(String d:dairy.getDairies()){
+                if (ingredient.contains(d) || d.contains(ingredient)) {
+                    return true;
+                }
             }
         }
         if(typeList.contains("fruit")) {
-            Fruit fruit=new Fruit();
-            if(fruit.getFruits().contains(ingredient)) {
-                return true;
+            InputStream fruiti=res.openRawResource(R.raw.fruits);
+            Fruit fruit = new Fruit(fruiti);
+            for(String f:fruit.getFruits()){
+                if (ingredient.contains(f) || f.contains(ingredient)) {
+                    return true;
+                }
             }
         }
         if(typeList.contains("meat")) {
-            Meat meat = new Meat();
-            if(meat.getMeats().contains(ingredient)) {
-                return true;
+            InputStream meati=res.openRawResource(R.raw.meats);
+            Meat meat = new Meat(meati);
+            for(String m:meat.getMeats()){
+                if (ingredient.contains(m) || m.contains(ingredient)) {
+                    return true;
+                }
             }
         }
         if(typeList.contains("oil")) {
-            Oil oil = new Oil();
-            if(oil.getOils().contains(ingredient)) {
-                return true;
+            InputStream oili=res.openRawResource(R.raw.oils);
+            Oil oil = new Oil(oili);
+            for(String o:oil.getOils()){
+                if (ingredient.contains(o) || o.contains(ingredient)) {
+                    return true;
+                }
             }
         }
         if(typeList.contains("other")) {
-            Other other = new Other();
-            if(other.getOthers().contains(ingredient)) {
-                return true;
+            InputStream otheri=res.openRawResource(R.raw.others);
+            Other other = new Other(otheri);
+            for(String o:other.getOthers()){
+                if (ingredient.contains(o) || o.contains(ingredient)) {
+                    return true;
+                }
             }
         }
         if(typeList.contains("seafood")) {
-            SeaFood seafood = new SeaFood();
-            if(seafood.getSeaFoods().contains(ingredient)) {
-                return true;
+            InputStream seafoodi=res.openRawResource(R.raw.seafoods);
+            SeaFood seafood = new SeaFood(seafoodi);
+            for(String s:seafood.getSeaFoods()){
+                if (ingredient.contains(s) || s.contains(ingredient)) {
+                    return true;
+                }
             }
         }
         if(typeList.contains("seasoning")) {
-            Seasoning seasoning = new Seasoning();
-            if(seasoning.getSeasonings().contains(ingredient)) {
-                return true;
+            InputStream seasoningi=res.openRawResource(R.raw.seasonings);
+            Seasoning seasoning = new Seasoning(seasoningi);
+            for(String s:seasoning.getSeasonings()){
+                if (ingredient.contains(s) || s.contains(ingredient)) {
+                    return true;
+                }
             }
         }
         if(typeList.contains("veggie")) {
-            Veggie veggie = new Veggie();
-            if(veggie.getVeggies().contains(ingredient)) {
-                return true;
+            InputStream veggiei=res.openRawResource(R.raw.veggies);
+            Veggie veggie = new Veggie(veggiei);
+            for(String v:veggie.getVeggies()){
+                if (ingredient.contains(v) || v.contains(ingredient)) {
+                    return true;
+                }
             }
         }
         return false;

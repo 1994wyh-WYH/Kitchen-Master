@@ -61,8 +61,8 @@ public class Main8Activity extends AppCompatActivity {
     private View getListItemView(@NonNull FullRecipe r) {
         View view = getLayoutInflater().inflate(R.layout.content_main8, null);
         ((TextView)view.findViewById(R.id.title)).setText(r.getTitle());
-        ((TextView)view.findViewById(R.id.date)).setText(r.getDate());
-        ((TextView)view.findViewById(R.id.rating)).setText(r.getRating().toString());
+        //((TextView)view.findViewById(R.id.date)).setText(r.getDate());
+        //((TextView)view.findViewById(R.id.rating)).setText(r.getRating().toString());
         ((TextView)view.findViewById(R.id.ingredients)).setText(r.getIngredients().toString());
         return view;
     }

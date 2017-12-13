@@ -80,6 +80,21 @@
         />
 
     <TextView
+        android:id="@+id/showtest2"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        />
+    <TextView
+        android:id="@+id/showtest3"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        />
+
+    <TextView
         android:id="@+id/showrecipe"
         android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
