@@ -26,7 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="75dp"
             android:gravity="center"
-            android:text="Enter First Ingredient"
+            android:text="1st Ingredient"
             android:textSize="30sp"
             android:textColor="#ffff"
             android:textStyle="bold"
@@ -58,7 +58,7 @@
             android:layout_height="75dp"
             android:gravity="center"
 
-            android:text="Enter Second Ingredient"
+            android:text="2nd Ingredient"
             android:textColor="#ffff"
             android:textSize="30sp"
             android:textStyle="bold" />
@@ -90,7 +90,7 @@
             android:layout_height="75dp"
             android:gravity="center"
 
-            android:text="Enter Thrid Ingredient"
+            android:text="3rd Ingredient"
             android:textColor="#ffff"
             android:textSize="30sp"
             android:textStyle="bold" />

@@ -22,7 +22,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="enter your food first \nchoose you category\nsfafaef\nsjnfjd\nsdbfhsfjsdjfskfmek\ndshfsjnfjsfjsf\nsdbhfdhbfshf"
+        android:text="enter your food first \n\nchoose you category\n\nchoose the cuisine\n\nthe top ingredients to go with the input ingredients will be shown on screen\n\nchoose among them and explore full recipes involving the ingredient combinations"
         android:textAllCaps="true"
         android:textColor="#f123"
         android:textSize="20sp"
@@ -30,11 +30,11 @@
 
     <Button
         android:id="@+id/gotouse"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#f00"
-        android:text="Go to use"
+        android:text="Go Kitchen-Master!"
         android:textAllCaps="true"
         android:textColor="#fff"
         android:textSize="30sp"

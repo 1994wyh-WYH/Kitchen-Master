@@ -11,8 +11,8 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=" Please Choose a Number "
-        android:textSize="29sp"
+        android:text=" Please Choose A Ranking Range "
+        android:textSize="20sp"
         android:gravity="center"
         android:textColor="#ffff"
         android:textStyle="bold"

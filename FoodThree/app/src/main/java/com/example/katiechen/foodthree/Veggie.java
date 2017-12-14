@@ -1,5 +1,6 @@
 package com.example.katiechen.foodthree;
 import java.io.File;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -15,11 +16,13 @@ public class Veggie {
 	/**
 	 * This is the constructor of the class.
 	 */
-	public Veggie() {
+	public Veggie(InputStream inp) {
 		veggies=new ArrayList<>();
 		try {
-			File file=new File("veggies.txt");
-			Scanner in=new Scanner(file);
+
+			//File file=new File("veggies.txt");
+			Scanner in=new Scanner(inp);
+
 			while(in.hasNextLine()) {
 				veggies.add(in.nextLine().toLowerCase());
 			}
