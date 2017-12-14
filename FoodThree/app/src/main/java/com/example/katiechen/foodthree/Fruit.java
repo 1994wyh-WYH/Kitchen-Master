@@ -13,8 +13,9 @@ public class Fruit {
 	public Fruit(InputStream inp) {
 		fruits=new ArrayList<>();
 		try {
-			//File file=new File("fruits.txt");
+
 			Scanner in=new Scanner(inp);
+
 			while(in.hasNextLine()) {
 				fruits.add(in.nextLine().toLowerCase());
 			}
@@ -29,7 +30,7 @@ public class Fruit {
 	 * This method returns the dairy list.
 	 * @return an arraylist of dairies
 	 */
-	public static ArrayList<String> getFruits() {
+	public ArrayList<String> getFruits() {
 		return fruits;
 	}
 }

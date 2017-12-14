@@ -1,4 +1,0 @@
-#Sat Dec 09 03:48:28 EST 2017
-base.0=/Users/katiechen/Downloads/Kitchen-Master-master 3/FoodThree/app/build/intermediates/transforms/dexMerger/debug/0
-renamed.0=classes.dex
-file.0=/Users/katiechen/Downloads/Kitchen-Master-master 3/FoodThree/app/build/intermediates/transforms/dexMerger/debug/0/classes.dex

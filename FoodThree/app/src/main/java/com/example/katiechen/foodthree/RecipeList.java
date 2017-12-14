@@ -23,24 +23,40 @@ import com.google.gson.stream.JsonToken;
  *
  */
 public class RecipeList {
-	private ArrayList<Recipe> recipes = new ArrayList<>();;
+	private static ArrayList<Recipe> recipes;
 	
 	
 	/**
 	 * This is the constructor.
-	 * @param in, file name of the .json file.
+	 * @param fileName, file name of the .json file.
 	 * @throws JSONException
 	 * @throws IOException
 	 */
-	public RecipeList(InputStream in) throws JSONException, IOException {
+	public RecipeList(InputStream fileName) throws JSONException, IOException {
+		
+		recipes=new ArrayList<>();
 
-		JsonReader reader = new JsonReader(new InputStreamReader(in, "UTF-8"));
+		//InputStream in = new FileInputStream("train.json");
+		JsonReader reader = new JsonReader(new InputStreamReader(fileName, "UTF-8"));
 	     try {
 	       recipes=readArray(reader);
 	     } finally {
 	       reader.close();
 	     }
 		
+	}
+	public RecipeList() throws JSONException, IOException {
+
+		recipes=new ArrayList<>();
+
+		InputStream in = new FileInputStream("train.json");
+		JsonReader reader = new JsonReader(new InputStreamReader(in, "UTF-8"));
+		try {
+			recipes=readArray(reader);
+		} finally {
+			reader.close();
+		}
+
 	}
 	
 	/**

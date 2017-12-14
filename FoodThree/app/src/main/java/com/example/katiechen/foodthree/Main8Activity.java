@@ -1,4 +1,4 @@
-package com.example.katiechen.foodthree;
+/**package com.example.katiechen.foodthree;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -183,3 +183,4 @@ public class Main8Activity extends AppCompatActivity {
         return true;
     }
 }
+**/

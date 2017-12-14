@@ -6,8 +6,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-import android.content.res.Resources;
-
 import org.json.JSONException;
 
 import com.google.gson.stream.JsonReader;
@@ -25,22 +23,34 @@ public class FullRecipeList {
 	
 	/**
 	 * This is the constructor.
-	 * //@param fileName, file name of the .json file.
+	 * @param fileName, file name of the .json file.
 	 * @throws JSONException
 	 * @throws IOException
 	 */
-	public FullRecipeList(InputStream in) throws JSONException, IOException {
+	public FullRecipeList(InputStream fileName) throws JSONException, IOException {
 
-		//in = getResources().openRawResource(R.raw.full_format_recipes);
-		//InputStream in = new FileInputStream("full_format_recipes.json");
+		//InputStream in = new FileInputStream(fileName);
 		
-		JsonReader reader = new JsonReader(new InputStreamReader(in, "UTF-8"));
+		JsonReader reader = new JsonReader(new InputStreamReader(fileName, "UTF-8"));
 	     try {
 	       fullRecipes=readArray(reader);
 	     } finally {
 	       reader.close();
 	     }
 		
+	}
+
+	public FullRecipeList() throws JSONException, IOException {
+
+		InputStream in = new FileInputStream("full_format_recipes.json");
+
+		JsonReader reader = new JsonReader(new InputStreamReader(in, "UTF-8"));
+		try {
+			fullRecipes=readArray(reader);
+		} finally {
+			reader.close();
+		}
+
 	}
 	
 	/**

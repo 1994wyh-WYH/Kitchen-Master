@@ -19,8 +19,10 @@ private static ArrayList<String> dairies;
 	public Dairy(InputStream inp) {
 		dairies=new ArrayList<>();
 		try {
+
 			//File file=new File("dairies.txt");
 			Scanner in=new Scanner(inp);
+
 			while(in.hasNextLine()) {
 				dairies.add(in.nextLine().toLowerCase());
 			}
@@ -35,7 +37,7 @@ private static ArrayList<String> dairies;
 	 * This method returns the dairy list.
 	 * @return an arraylist of dairies
 	 */
-	public static ArrayList<String> getDairies() {
+	public ArrayList<String> getDairies() {
 		return dairies;
 	}
 }

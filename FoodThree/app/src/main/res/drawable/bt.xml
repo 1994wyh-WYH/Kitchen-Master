@@ -12,8 +12,8 @@
     <!--默认背景-->
     <item>
         <shape>
-            <solid android:color="@color/colorAccent1" />
-            <corners android:radius="300dp" />
+            <solid android:color="@color/red6" />
+            <corners android:radius="20dp" />
         </shape>
     </item>
 </selector>

@@ -20,8 +20,9 @@ public class SeaFood {
 	public SeaFood(InputStream inp) {
 		seaFoods=new ArrayList<>();
 		try {
-			//File file=new File("seafoods.txt");
+
 			Scanner in=new Scanner(inp);
+
 			while(in.hasNextLine()) {
 				seaFoods.add(in.nextLine().toLowerCase());
 			}
@@ -36,7 +37,7 @@ public class SeaFood {
 	 * This method returns the sea foods list.
 	 * @return an arraylist of sea foods
 	 */
-	public static ArrayList<String> getSeaFoods() {
+	public ArrayList<String> getSeaFoods() {
 		return seaFoods;
 	}
 }

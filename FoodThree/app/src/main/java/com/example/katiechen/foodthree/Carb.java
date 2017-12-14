@@ -31,10 +31,10 @@ public class Carb {
 	public Carb(InputStream inp) {
 		carbs=new ArrayList<>();
 		try {
-//			File file=new File("./carbs.txt");
-//			Scanner in=new Scanner(file);
-			//Context mContext = getApplicationContext();
+
 			Scanner in  = new Scanner(inp);
+
+
 			while(in.hasNextLine()) {
 				carbs.add(in.nextLine().toLowerCase());
 			}
@@ -49,7 +49,7 @@ public class Carb {
 	 * This method returns the carbs list.
 	 * @return an arraylist of carbs
 	 */
-	public static ArrayList<String> getCarbs() {
+	public ArrayList<String> getCarbs() {
 		return carbs;
 	}
 	

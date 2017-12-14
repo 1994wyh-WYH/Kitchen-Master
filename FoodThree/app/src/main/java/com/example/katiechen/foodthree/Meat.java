@@ -18,8 +18,9 @@ public class Meat {
 	public Meat(InputStream inp) {
 		meats=new ArrayList<>();
 		try {
-			//File file=new File("meats.txt");
+
 			Scanner in=new Scanner(inp);
+
 			while(in.hasNextLine()) {
 				meats.add(in.nextLine().toLowerCase());
 			}
@@ -34,7 +35,7 @@ public class Meat {
 	 * This method returns the meat list.
 	 * @return an arraylist of meats
 	 */
-	public static ArrayList<String> getMeats() {
+	public ArrayList<String> getMeats() {
 		return meats;
 	}
 
