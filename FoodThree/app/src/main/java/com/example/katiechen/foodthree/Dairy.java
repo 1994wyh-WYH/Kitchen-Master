@@ -1,6 +1,7 @@
 package com.example.katiechen.foodthree;
 
 import java.io.File;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -15,11 +16,13 @@ private static ArrayList<String> dairies;
 	/**
 	 * This is the constructor of the class.
 	 */
-	public Dairy() {
+	public Dairy(InputStream inp) {
 		dairies=new ArrayList<>();
 		try {
-			File file=new File("");
-			Scanner in=new Scanner(file);
+
+			//File file=new File("dairies.txt");
+			Scanner in=new Scanner(inp);
+
 			while(in.hasNextLine()) {
 				dairies.add(in.nextLine().toLowerCase());
 			}
@@ -34,7 +37,7 @@ private static ArrayList<String> dairies;
 	 * This method returns the dairy list.
 	 * @return an arraylist of dairies
 	 */
-	public static ArrayList<String> getDairies() {
+	public ArrayList<String> getDairies() {
 		return dairies;
 	}
 }

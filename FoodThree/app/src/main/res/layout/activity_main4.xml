@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@drawable/bt5"
-            android:text="Please Choose Cuisine"
+            android:text="Cuisine"
             android:textAllCaps="true"
             android:textSize="25sp"
             android:textColor="#fff"

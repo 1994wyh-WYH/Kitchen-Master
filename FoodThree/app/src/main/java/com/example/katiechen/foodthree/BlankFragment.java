@@ -45,7 +45,7 @@ public class BlankFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_blank, container, false);
         title = (TextView) view.findViewById(R.id.title);
-        date = (TextView) view.findViewById(R.id.date);
+        //date = (TextView) view.findViewById(R.id.date);
         fat = (TextView) view.findViewById(R.id.Fat);
         rating = (TextView) view.findViewById(R.id.rating);
         cal = (TextView) view.findViewById(R.id.Calories);
@@ -61,7 +61,7 @@ public class BlankFragment extends Fragment {
         System.out.println("888");
         System.out.println(res.size());
         title.setText((page+1) + " Title: " + res.get(page).getTitle());
-        date.setText("Date: "+res.get(page).getDate());
+        //date.setText("Date: "+res.get(page).getDate());
         rating.setText("Rating: " + res.get(page).getRating().toString());
         fat.setText("Fat: " + res.get(page).getFat().toString());
         cal.setText("Calories: " + res.get(page).getCalories().toString());

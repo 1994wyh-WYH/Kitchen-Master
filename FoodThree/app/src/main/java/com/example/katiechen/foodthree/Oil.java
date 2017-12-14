@@ -1,6 +1,7 @@
 package com.example.katiechen.foodthree;
 
 import java.io.File;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 /**
@@ -14,11 +15,13 @@ public class Oil {
 	/**
 	 * This is the constructor of the class.
 	 */
-	public Oil() {
+	public Oil(InputStream inp) {
 		oils=new ArrayList<>();
 		try {
-			File file=new File("");
-			Scanner in=new Scanner(file);
+
+			//File file=new File("oils.txt");
+			Scanner in=new Scanner(inp);
+
 			while(in.hasNextLine()) {
 				oils.add(in.nextLine().toLowerCase());
 			}
@@ -33,7 +36,7 @@ public class Oil {
 	 * This method returns the oil list.
 	 * @return an arraylist of oils
 	 */
-	public static ArrayList<String> getOils() {
+	public ArrayList<String> getOils() {
 		return oils;
 	}
 

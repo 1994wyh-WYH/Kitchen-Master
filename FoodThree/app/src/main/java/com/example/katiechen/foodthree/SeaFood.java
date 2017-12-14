@@ -1,6 +1,7 @@
 package com.example.katiechen.foodthree;
 
 import java.io.File;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -16,11 +17,12 @@ public class SeaFood {
 	/**
 	 * This is the constructor of the class.
 	 */
-	public SeaFood() {
+	public SeaFood(InputStream inp) {
 		seaFoods=new ArrayList<>();
 		try {
-			File file=new File("");
-			Scanner in=new Scanner(file);
+
+			Scanner in=new Scanner(inp);
+
 			while(in.hasNextLine()) {
 				seaFoods.add(in.nextLine().toLowerCase());
 			}
@@ -35,7 +37,7 @@ public class SeaFood {
 	 * This method returns the sea foods list.
 	 * @return an arraylist of sea foods
 	 */
-	public static ArrayList<String> getSeaFoods() {
+	public ArrayList<String> getSeaFoods() {
 		return seaFoods;
 	}
 }
