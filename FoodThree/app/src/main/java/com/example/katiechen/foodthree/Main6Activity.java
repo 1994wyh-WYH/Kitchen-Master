@@ -82,7 +82,7 @@ public class Main6Activity extends AppCompatActivity {
             final ArrayList<String> res = findTop(rl, foodlist,catlist,cuisinelist,Integer.parseInt(rank), reso);
             System.out.println("end search");
             if(res==null||res.size()==0){
-                System.out.println("no recipe!!!!!!!!!!!");
+                //System.out.println("no recipe!!!!!!!!!!!");
                 ((TextView) findViewById(R.id.bbb)).setText("no recipe found!");
                 return;
             }
@@ -207,12 +207,12 @@ public class Main6Activity extends AppCompatActivity {
     public static ArrayList<String> findTop(ArrayList<Recipe> rl,ArrayList<String> foodInput, ArrayList<String> type, ArrayList<String> cuisine, int top, Resources reso) throws JSONException, IOException  {
         HashMap<String, Integer> map = new HashMap<>();
         for(Recipe recipe:rl) {
-            System.out.println(recipe.getCuisine());
+            //System.out.println(recipe.getCuisine());
             if(checkCuisine(cuisine,recipe.getCuisine().toLowerCase())) {
                 ArrayList<String> ingredientsList = recipe.getIngredients();
-                System.out.println("entered ingr list");
+                //System.out.println("entered ingr list");
                 if(checkContains(foodInput, ingredientsList)) {
-                    System.out.println("checked contains ingr");
+                    //System.out.println("checked contains ingr");
                     for(String ingredient:ingredientsList) {
                         if(!foodInput.contains(ingredient)) {
                             if(checkType(type, ingredient, reso)) {
@@ -260,11 +260,13 @@ public class Main6Activity extends AppCompatActivity {
 
     public static boolean checkContains(ArrayList<String> foodInput, ArrayList<String> ingredientList) {
         for(String input:foodInput) {
-            if(!ingredientList.contains(input)) {
-                return false;
+            for(String ingr:ingredientList) {
+                if ((ingr.contains(input))||(input.contains(ingr))) {
+                    return true;
+                }
             }
         }
-        return true;
+        return false;
     }
 
     public static boolean checkCuisine(ArrayList<String> cuisineList, String cuisine) {
