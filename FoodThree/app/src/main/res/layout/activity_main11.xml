@@ -6,14 +6,35 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="@color/red1"
+    android:background="@drawable/ggg"
     tools:context="com.example.katiechen.foodthree.MainActivity">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="7dp"
+        android:orientation="vertical"
+        android:background="@drawable/bt5">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:orientation="vertical"
+            android:background="@drawable/bt4">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=" How to Use "
-        android:textAllCaps="true"
+        android:text="How to Use "
         android:layout_gravity="center_horizontal"
         android:textColor="#f123"
         android:textSize="40sp"
@@ -23,6 +44,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="enter your food first \n\nchoose you category\n\nchoose the cuisine\n\nthe top ingredients to go with the input ingredients will be shown on screen\n\nchoose among them and explore full recipes involving the ingredient combinations"
+<<<<<<< HEAD
+        android:textColor="#f123"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+        <Button
+            android:id="@+id/gotouse"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bt6"
+            android:text="Go Kitchen-Master!"
+            android:textAllCaps="true"
+            android:textColor="#fff"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+        </LinearLayout>
+    </ScrollView>
+=======
         android:textAllCaps="true"
         android:textColor="#f123"
         android:textSize="20sp"
@@ -39,5 +80,6 @@
         android:textColor="#fff"
         android:textSize="30sp"
         android:textStyle="bold" />
+>>>>>>> 931af71aff4e1a9d847354aaf4c7e8823eb0c410
 
 </LinearLayout>

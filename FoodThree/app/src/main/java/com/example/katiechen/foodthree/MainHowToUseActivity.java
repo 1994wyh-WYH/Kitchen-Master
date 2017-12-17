@@ -6,9 +6,8 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
-public class Main11Activity extends AppCompatActivity {
+public class MainHowToUseActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +20,7 @@ public class Main11Activity extends AppCompatActivity {
         gotouse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent2 = new Intent(Main11Activity.this, Main2Activity.class);
+                Intent intent2 = new Intent(MainHowToUseActivity.this, MainIngreInputActivity.class);
                 startActivity(intent2);
             }
         });

@@ -65,6 +65,13 @@ public class BlankFragment extends Fragment {
             return;
         }
         title.setText((page+1) + " Title: " + res.get(page).getTitle());
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+        //date.setText("Date: "+res.get(page).getDate());
+>>>>>>> 931af71aff4e1a9d847354aaf4c7e8823eb0c410
+>>>>>>> 9161a51e4967eff3d883cfb85af3d381f8d61cb8
         rating.setText("Rating: " + res.get(page).getRating().toString());
         fat.setText("Fat: " + res.get(page).getFat().toString());
         cal.setText("Calories: " + res.get(page).getCalories().toString());
@@ -76,10 +83,4 @@ public class BlankFragment extends Fragment {
 
 
     }
-//    @Override
-//    public void setArguments(Bundle bundle) {
-//        System.out.println("777");
-//        res = (ArrayList<FullRecipe>) bundle.getSerializable(Main12Activity.RESULT);
-////        System.out.println(res.size());
-//    }
 }

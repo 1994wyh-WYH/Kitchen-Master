@@ -1,6 +1,5 @@
 package com.example.katiechen.foodthree;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,13 +7,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-public class Main3Activity extends AppCompatActivity {
+public class MainCategoryActivity extends AppCompatActivity {
 
     public ArrayList<String> foodlist;
     public ArrayList<String> catlist;
@@ -29,18 +26,18 @@ public class Main3Activity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        foodlist = getIntent().getStringArrayListExtra(Main2Activity.FOODLIST);
+        foodlist = getIntent().getStringArrayListExtra(MainIngreInputActivity.FOODLIST);
 
         Button startButton = findViewById(R.id.next2);
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Main3Activity.this, Main4Activity.class);
+                Intent intent = new Intent(MainCategoryActivity.this, MainCuisineActivity.class);
                 setData(intent);
                 if(catlist.size()>=1) {
                     startActivity(intent);
                 } else {
-                    Toast.makeText(Main3Activity.this,"Please Select at Least One Category!",Toast.LENGTH_LONG).show();
+                    Toast.makeText(MainCategoryActivity.this,"Please Select at Least One Category!",Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -98,6 +95,6 @@ public class Main3Activity extends AppCompatActivity {
             catlist.add("dairy");
         }
         intent.putExtra(CATLIST, catlist);
-        intent.putExtra(Main2Activity.FOODLIST, foodlist);
+        intent.putExtra(MainIngreInputActivity.FOODLIST, foodlist);
     }
 }

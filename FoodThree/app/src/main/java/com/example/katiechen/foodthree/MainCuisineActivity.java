@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class Main4Activity extends AppCompatActivity {
+public class MainCuisineActivity extends AppCompatActivity {
 
     public static final String CUISINE = "cuisine";
     public ArrayList<String> foodlist;
@@ -25,19 +25,19 @@ public class Main4Activity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        foodlist = getIntent().getStringArrayListExtra(Main2Activity.FOODLIST);
-        catlist = getIntent().getStringArrayListExtra(Main3Activity.CATLIST);
+        foodlist = getIntent().getStringArrayListExtra(MainIngreInputActivity.FOODLIST);
+        catlist = getIntent().getStringArrayListExtra(MainCategoryActivity.CATLIST);
 
         Button startButton = findViewById(R.id.next3);
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Main4Activity.this, Main5Activity.class);
+                Intent intent = new Intent(MainCuisineActivity.this, MainRankActivity.class);
                 setData(intent);
                 if(cuisinelist.size()>=1) {
                     startActivity(intent);
                 } else {
-                    Toast.makeText(Main4Activity.this,"Please Select at Least One Cuisine!",Toast.LENGTH_LONG).show();
+                    Toast.makeText(MainCuisineActivity.this,"Please Select at Least One Cuisine!",Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -138,8 +138,8 @@ public class Main4Activity extends AppCompatActivity {
         if (check21.isChecked()) {
             cuisinelist.add("russian");
         }
-        intent.putExtra(Main2Activity.FOODLIST, foodlist);
-        intent.putExtra(Main3Activity.CATLIST, catlist);
+        intent.putExtra(MainIngreInputActivity.FOODLIST, foodlist);
+        intent.putExtra(MainCategoryActivity.CATLIST, catlist);
         intent.putExtra(CUISINE, cuisinelist);
     }
 
