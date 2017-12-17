@@ -6,12 +6,10 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.RadioButton;
 
 import java.util.ArrayList;
 
-public class Main5Activity extends AppCompatActivity {
+public class MainRankActivity extends AppCompatActivity {
 
     public static final String RANK = "rank";
     public ArrayList<String> foodlist;
@@ -26,15 +24,15 @@ public class Main5Activity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        foodlist = getIntent().getStringArrayListExtra(Main2Activity.FOODLIST);
-        catlist = getIntent().getStringArrayListExtra(Main3Activity.CATLIST);
-        cuisinelist = getIntent().getStringArrayListExtra(Main4Activity.CUISINE);
+        foodlist = getIntent().getStringArrayListExtra(MainIngreInputActivity.FOODLIST);
+        catlist = getIntent().getStringArrayListExtra(MainCategoryActivity.CATLIST);
+        cuisinelist = getIntent().getStringArrayListExtra(MainCuisineActivity.CUISINE);
 
         Button startButton = findViewById(R.id.one);
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Main5Activity.this, Main6Activity.class);
+                Intent intent = new Intent(MainRankActivity.this, MainIngreOutputActivity.class);
                 setData(intent, "1");
                 startActivity(intent);
             }
@@ -44,7 +42,7 @@ public class Main5Activity extends AppCompatActivity {
         startButton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Main5Activity.this, Main6Activity.class);
+                Intent intent = new Intent(MainRankActivity.this, MainIngreOutputActivity.class);
                 setData(intent, "2");
                 startActivity(intent);
             }
@@ -54,7 +52,7 @@ public class Main5Activity extends AppCompatActivity {
         startButton3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Main5Activity.this, Main6Activity.class);
+                Intent intent = new Intent(MainRankActivity.this, MainIngreOutputActivity.class);
                 setData(intent, "3");
                 startActivity(intent);
             }
@@ -64,7 +62,7 @@ public class Main5Activity extends AppCompatActivity {
         startButton4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Main5Activity.this, Main6Activity.class);
+                Intent intent = new Intent(MainRankActivity.this, MainIngreOutputActivity.class);
                 setData(intent, "4");
                 startActivity(intent);
             }
@@ -74,7 +72,7 @@ public class Main5Activity extends AppCompatActivity {
         startButton5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Main5Activity.this, Main6Activity.class);
+                Intent intent = new Intent(MainRankActivity.this, MainIngreOutputActivity.class);
                 setData(intent, "5");
                 startActivity(intent);
             }
@@ -91,9 +89,9 @@ public class Main5Activity extends AppCompatActivity {
     }
 
     public void setData(Intent intent, String rank) {
-        intent.putExtra(Main2Activity.FOODLIST, foodlist);
-        intent.putExtra(Main3Activity.CATLIST, catlist);
-        intent.putExtra(Main4Activity.CUISINE, cuisinelist);
+        intent.putExtra(MainIngreInputActivity.FOODLIST, foodlist);
+        intent.putExtra(MainCategoryActivity.CATLIST, catlist);
+        intent.putExtra(MainCuisineActivity.CUISINE, cuisinelist);
         intent.putExtra(RANK, rank);
     }
 

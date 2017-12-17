@@ -38,6 +38,48 @@ public class Print {
 		return findTopN(map, top, new MyComparatorDESC());
 	}
 	
+	 public static FullRecipe findRamdonRecipe(ArrayList<FullRecipe> rs, ArrayList<String> ingredients) {
+	        Random rand = new Random();
+	        int s = rand.nextInt(rs.size());
+	        ArrayList<String> randomI = new ArrayList<>();
+	        ArrayList<String> randomD = new ArrayList<>();
+	        while (randomI.size()==0||randomD.size()==0){
+	            for (int i = s; i < rs.size(); i++) {
+	                FullRecipe fullrecipe = rs.get(i);
+	                ArrayList<String> foodlist = fullrecipe.getIngredients();
+	                if (foodlist != null) {
+	                    for (String ingredient : ingredients) {
+	                        if (getIngredient(foodlist, ingredient) != null && fullrecipe.getDirections().size() != 0) {
+	                            randomI.add(getIngredient(foodlist, ingredient));
+	                            Random n = new Random();
+	                            System.out.println(fullrecipe.getDirections().size());
+	                            	int select = n.nextInt(fullrecipe.getDirections().size());
+		                         randomD.add(fullrecipe.getDirections().get(select));
+		                         if(randomI.size()>=10 && randomD.size()>=10) {
+		                        	 break;
+		                         }
+	                        }
+	                    }
+	                }
+	                if(randomI.size()>=10 && randomD.size()>=10) {
+                   	 break;
+                    }
+	            }
+	            s--;
+	        }
+	        FullRecipe randomF=new FullRecipe(randomD, 0.0, null, null, 0.0, null, 0.0, 0.0, null, randomI, 0.0);
+	        return randomF;
+	    }
+
+	    public static String getIngredient(ArrayList<String> foodlist, String ingredient) {
+	        for(String ingre: foodlist) {
+	            if(!ingre.contains(ingredient)) {
+	                return ingre;
+	            }
+	        }
+	        return null;
+	    }
+	
 	static class MyComparatorDESC implements Comparator<Map.Entry<String, Integer>> {
 	        @Override
 	        public int compare(Map.Entry<String, Integer> map1, Map.Entry<String, Integer> map2) {
@@ -49,10 +91,9 @@ public class Print {
 	    }
 	public static ArrayList<String> findTopN(HashMap<String, Integer> map, int top, Comparator comparator) {
 		ArrayList<Map.Entry<String, Integer>> list = new ArrayList(map.entrySet());
-//		System.out.println(list.size());
         Collections.sort(list, comparator);
         ArrayList<String> result = new ArrayList<>();
-        for (int i = 0; i < top; i++) {
+        for (int i = 0; i < top && i < list.size(); i++) {
             result.add(list.get(i).getKey());
         } 
         return result;
@@ -171,67 +212,120 @@ public class Print {
 }
 
 	static class MyFatDESCComparator implements Comparator<FullRecipe> {
+		@Override
         public int compare(FullRecipe r1, FullRecipe r2) {
-            if (r1.getFat() == r2.getFat()) {
+            if ((r1.getFat() - r2.getFat()) == 0) {
                 return 0;
-            }
-            return r1.getFat() < r2.getFat() ? 1 : -1;
+            } else {
+        		if((r1.getFat() - r2.getFat()) < 0) {
+        			return 1;
+        		} else {
+        			return -1;
+        		}
+        }
         }
     }
 	static class MyFatASCComparator implements Comparator<FullRecipe> {
+		@Override
         public int compare(FullRecipe r1, FullRecipe r2) {
-            if (r1.getFat() == r2.getFat()) {
+			if ((r1.getFat() - r2.getFat()) == 0) {
                 return 0;
-            }
-            return r1.getFat() > r2.getFat() ? 1 : -1;
+            } else {
+        		if((r1.getFat() - r2.getFat()) < 0) {
+        			return -1;
+        		} else {
+        			return 1;
+        		}
+        }
         }
     }
 	static class MyRatingASCComparator implements Comparator<FullRecipe> {
+		@Override
         public int compare(FullRecipe r1, FullRecipe r2) {
-            if (r1.getRating() == r2.getRating()) {
+            if ((r1.getRating() - r2.getRating()) == 0) {
                 return 0;
+            } else {
+            		if((r1.getRating() - r2.getRating()) > 0) {
+            			return 1;
+            		} else {
+            			return -1;
+            		}
             }
-            return r1.getRating() > r2.getRating() ? 1 : -1;
         }
     }
 	static class MyRatingDESCComparator implements Comparator<FullRecipe> {
+		@Override
         public int compare(FullRecipe r1, FullRecipe r2) {
-        	if (r1.getRating() == r2.getRating()) {
+        	if ((r1.getRating() - r2.getRating()) == 0) {
                 return 0;
             }
-            return r1.getRating() < r2.getRating() ? 1 : -1;
+        	else {
+        		if((r1.getRating() - r2.getRating()) < 0) {
+        			return 1;
+        		} else {
+        			return -1;
+        		}
+        }
         }
     }
 	static class MyCalDESCComparator implements Comparator<FullRecipe> {
+		@Override
         public int compare(FullRecipe r1, FullRecipe r2) {
-        	if (r1.getCalories() == r2.getCalories()) {
+        	if ((r1.getCalories() - r2.getCalories()) == 0) {
                 return 0;
             }
-            return r1.getCalories() < r2.getCalories() ? 1 : -1;
+        	else {
+        		if((r1.getCalories()-r2.getCalories()) < 0) {
+        			return 1;
+        		} else {
+        			return -1;
+        		}
+        	}
         }
     }
 	static class MyCalASCComparator implements Comparator<FullRecipe> {
-        public int compare(FullRecipe r1, FullRecipe r2) {
-        	if (r1.getCalories() == r2.getCalories()) {
+		@Override
+		public int compare(FullRecipe r1, FullRecipe r2) {
+        	if ((r1.getCalories() - r2.getCalories()) == 0) {
                 return 0;
             }
-            return r1.getCalories() > r2.getCalories() ? 1 : -1;
+        	else {
+        		if((r1.getCalories()-r2.getCalories()) < 0) {
+        			return -1;
+        		} else {
+        			return 1;
+        		}
+        	}
         }
     }
 	static class MyProteinDESCComparator implements Comparator<FullRecipe> {
+		@Override
         public int compare(FullRecipe r1, FullRecipe r2) {
-        	if (r1.getProtein() == r2.getProtein()) {
+        	if ((r1.getProtein() - r2.getProtein()) == 0) {
                 return 0;
             }
-            return r1.getProtein() < r2.getProtein() ? 1 : -1;
+        	else {
+        		if((r1.getProtein() - r2.getProtein()) < 0 ) {
+        			return 1;
+        		} else {
+        			return -1;
+        		}
+        	}
         }
     }
 	static class MyProteinASCComparator implements Comparator<FullRecipe> {
-        public int compare(FullRecipe r1, FullRecipe r2) {
-        	if (r1.getProtein() == r2.getProtein()) {
+		@Override
+		public int compare(FullRecipe r1, FullRecipe r2) {
+        	if ((r1.getProtein() - r2.getProtein()) == 0) {
                 return 0;
             }
-            return r1.getProtein() < r2.getProtein() ? 1 : -1;
+        	else {
+        		if((r1.getProtein() - r2.getProtein()) < 0 ) {
+        			return -1;
+        		} else {
+        			return 1;
+        		}
+        	}
         }
     }
  
@@ -249,26 +343,12 @@ public class Print {
 	public static void main(String[] args) throws JSONException, IOException {
 		FullRecipeList fr=new FullRecipeList();
 		ArrayList<FullRecipe> rs=fr.getFullRecipes();
-		for(FullRecipe recipe: rs) {
-			System.out.println(recipe.getCalories());
-		}
+
 		ArrayList<String> list = new ArrayList<>();
 		list.add("beef");
-		list.add("onion");
-		list.add("cheese");
-		list.add("garlic");
-		for (FullRecipe fc: findFullRecipe(rs,list,"cal high to low")) {
-			System.out.println(fc.getTitle());
-			System.out.println(fc.getDate());
-			System.out.println(fc.getCalories());
-			System.out.println(fc.getFat());
-			System.out.println(fc.getCategories());
-			System.out.println(fc.getProtein());
-			System.out.println(fc.getIngredients());
-			System.out.println(fc.getRating());
-			System.out.println(fc.getDescription());
-			System.out.println("=======================================================");
-		}
+
+		FullRecipe random = findRamdonRecipe(rs, list);
+		System.out.println(random.getIngredients());
 	
 }
 	

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ggg"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="7dp"
+            android:orientation="vertical"
+            android:background="@drawable/bt5">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:background="@drawable/b3">
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:textColor="#fff"
+                    android:textSize="20sp"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    />
+                <!--<TextView-->
+                <!--android:id="@+id/date"-->
+                <!--android:layout_marginTop="10dp"-->
+                <!--android:textColor="#fff"-->
+
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textStyle="bold"-->
+                <!--/>-->
+
+                <TextView
+                    android:id="@+id/Calories"
+                    android:textColor="#fff"
+
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:id="@+id/Protein"
+                    android:textColor="#fff"
+
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:id="@+id/ingredients"
+                    android:layout_marginTop="10dp"
+                    android:textColor="#fff"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:id="@+id/description"
+                    android:textColor="#fff"
+
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    />
+            </LinearLayout>
+             </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:padding="7dp"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/change"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bt4"
+                    android:textColor="#fff"
+                    android:textSize="26sp"
+                    android:textStyle="bold"
+                    android:text="Click to Change!"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="7dp"
+                android:orientation="vertical">
+
+            <Button
+                    android:id="@+id/back"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bt3"
+                    android:textColor="#fff"
+                    android:textSize="26sp"
+                    android:textStyle="bold"
+                    android:text="Back to Menu"/>
+
+            </LinearLayout>
+    </LinearLayout>
+    </ScrollView>
+</LinearLayout>

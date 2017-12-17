@@ -60,8 +60,11 @@ public class BlankFragment extends Fragment {
         int page = getArguments().getInt(KEY_PAGE);
         System.out.println("888");
         System.out.println(res.size());
+        if(res.size()==0) {
+            title.setText("Ooops!\nCannot Find Any Recipe Based On Your Selected Ingredients!\nPlease Go Back to Creat Your Random Recipe! ");
+            return;
+        }
         title.setText((page+1) + " Title: " + res.get(page).getTitle());
-        //date.setText("Date: "+res.get(page).getDate());
         rating.setText("Rating: " + res.get(page).getRating().toString());
         fat.setText("Fat: " + res.get(page).getFat().toString());
         cal.setText("Calories: " + res.get(page).getCalories().toString());
@@ -73,10 +76,4 @@ public class BlankFragment extends Fragment {
 
 
     }
-//    @Override
-//    public void setArguments(Bundle bundle) {
-//        System.out.println("777");
-//        res = (ArrayList<FullRecipe>) bundle.getSerializable(Main12Activity.RESULT);
-////        System.out.println(res.size());
-//    }
 }
