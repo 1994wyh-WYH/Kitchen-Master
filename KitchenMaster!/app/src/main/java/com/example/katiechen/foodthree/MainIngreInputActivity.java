@@ -25,9 +25,8 @@ public class MainIngreInputActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-
-        //Show back to previous activity buttion
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Kitchen Master");
 
         //if next buttion is clicked, go to next activity
         Button startButton = findViewById(R.id.next);
@@ -57,6 +56,7 @@ public class MainIngreInputActivity extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+
     }
 
     /**

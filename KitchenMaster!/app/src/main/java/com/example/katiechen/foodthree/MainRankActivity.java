@@ -23,6 +23,7 @@ public class MainRankActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main5);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Kitchen Master");
 
         foodlist = getIntent().getStringArrayListExtra(MainIngreInputActivity.FOODLIST);
         catlist = getIntent().getStringArrayListExtra(MainCategoryActivity.CATLIST);

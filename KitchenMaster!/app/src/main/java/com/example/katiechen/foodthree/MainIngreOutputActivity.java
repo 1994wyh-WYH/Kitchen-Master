@@ -37,6 +37,7 @@ public class MainIngreOutputActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main6);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Kitchen Master");
 
         foodlist = getIntent().getStringArrayListExtra(MainIngreInputActivity.FOODLIST);
         String food = "";

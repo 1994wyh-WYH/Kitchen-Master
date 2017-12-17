@@ -30,6 +30,8 @@ public class MainFullRecipeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main12);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Kitchen Master");
+
         ingredientsList = getIntent().getStringArrayListExtra(MainIngreOutputActivity.INGREDIENTS);
         orderby = getIntent().getStringExtra(MainRecipeRankActivity.ORDERBY);
         InputStream in = getResources().openRawResource(R.raw.full_format_recipes);

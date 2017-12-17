@@ -26,6 +26,7 @@ public class MainRandomRecipeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main8);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Kitchen Master");
 
         ingredientsList = getIntent().getStringArrayListExtra(MainIngreOutputActivity.INGREDIENTS);
         final InputStream in = getResources().openRawResource(R.raw.full_format_recipes);

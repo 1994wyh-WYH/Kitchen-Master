@@ -17,13 +17,12 @@ public class MainCategoryActivity extends AppCompatActivity {
     public ArrayList<String> catlist;
     public static final String CATLIST = "Cat list";
 
-    private static final int FOOD_CODE = 100;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Kitchen Master");
 
         //get foodlist data from the previous activity
         foodlist = getIntent().getStringArrayListExtra(MainIngreInputActivity.FOODLIST);

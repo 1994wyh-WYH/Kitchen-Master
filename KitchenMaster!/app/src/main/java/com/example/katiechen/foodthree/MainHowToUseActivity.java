@@ -14,6 +14,7 @@ public class MainHowToUseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main11);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Kitchen Master");
 
         //if clicked, go to how to use activity
         Button gotouse = findViewById(R.id.gotouse);

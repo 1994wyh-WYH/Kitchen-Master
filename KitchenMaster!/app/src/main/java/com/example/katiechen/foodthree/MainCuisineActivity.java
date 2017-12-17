@@ -24,6 +24,7 @@ public class MainCuisineActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main4);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Kitchen Master");
 
         foodlist = getIntent().getStringArrayListExtra(MainIngreInputActivity.FOODLIST);
         catlist = getIntent().getStringArrayListExtra(MainCategoryActivity.CATLIST);

@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
         // Show the activity_main page, which is in layout file in resource file. R means res.
         setContentView(R.layout.activity_main);
 
-
+        getSupportActionBar().setTitle("Kitchen Master");
         //Find the button in the corresponding layout which id is called start. if user onclick this buttion
         //it will automatically run the setOnClickListerner method
         //Intent is a collection between one activity to another activity.
