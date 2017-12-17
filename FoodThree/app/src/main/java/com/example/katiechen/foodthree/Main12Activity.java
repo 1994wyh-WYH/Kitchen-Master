@@ -44,38 +44,13 @@ public class Main12Activity extends AppCompatActivity {
             System.out.println(orderby);
             result = findFullRecipe(rs,ingredientsList,orderby);
             BlankFragment.res = result;
-//            Bundle bundle = new Bundle();
-//            bundle.putSerializable(RESULT, result);
-//            Fragment fragment = new BlankFragment();
-//            fragment.setArguments(bundle);
-//            LinearLayout ll = (LinearLayout) findViewById(R.id.crappy_list);
-//            ll.removeAllViews();
-//            for(FullRecipe fc: result) {
-//                View view = getListItemView(fc);
-//                ll.addView(view);
-//            }
-////            for (FullRecipe fc: result) {
-//                System.out.println(fc.getTitle());
-//                System.out.println(fc.getDate());
-//                System.out.println(fc.getCalories());
-//                System.out.println(fc.getFat());
-//                System.out.println(fc.getCategories());
-//                System.out.println(fc.getProtein());
-//                System.out.println(fc.getIngredients());
-//                System.out.println(fc.getRating());
-//                System.out.println(fc.getDescription());
-//                System.out.println("=======================================================");
-//            }
         } catch (Exception e){
             //((TextView) findViewById(R.id.showrecipe)).setText(("trouble reading JSON"));
         }
-        System.out.println("111");
         ViewPager viewPager = (ViewPager) findViewById(R.id.view_pager);
-        System.out.println("2222");
         viewPager.setAdapter(new NumberPagerAdapter(getSupportFragmentManager()));
-        System.out.println("333");
-
     }
+
     private class NumberPagerAdapter extends FragmentPagerAdapter {
         public NumberPagerAdapter(FragmentManager fm) {
             super(fm);
@@ -89,6 +64,9 @@ public class Main12Activity extends AppCompatActivity {
         @Override
         public int getCount() {
             System.out.println("main result size: " + result.size());
+            if(result.size() == 0) {
+                return 1;
+            }
             return result.size();
         }
     }
@@ -132,6 +110,9 @@ public class Main12Activity extends AppCompatActivity {
                     result.add(recipe);
                 }
             }
+        }
+        if(result.size() == 0) {
+            return result;
         }
         System.out.println(orderby);
         if(orderby.equals("fat high to low")) {

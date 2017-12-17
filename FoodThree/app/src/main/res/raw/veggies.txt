@@ -49,7 +49,9 @@ Endive
 Escarole
 Fennel
 Fenugreek
-Fiddlehead Ferns
+Fiddlehead Fern
+Garlic
+Ginger
 Grape Leaves
 Heart Of Palm
 Horseradish
@@ -82,7 +84,9 @@ Oyster Plant
 Parsley
 Parsnips
 Peas
-peas
+pea
+Peppers
+pepper
 Pesto
 Pickle, Brine
 Pickle, Vinegar

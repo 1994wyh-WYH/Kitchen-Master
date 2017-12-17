@@ -1,70 +1,99 @@
-/**package com.example.katiechen.foodthree;
+package com.example.katiechen.foodthree;
 
 import android.content.Intent;
-import android.support.annotation.NonNull;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.Random;
 
 public class Main8Activity extends AppCompatActivity {
     public ArrayList<String> ingredientsList;
-    public String orderby;
+    public FullRecipe res;
+    public ArrayList<String> foodlist;
+    public ArrayList<String> catlist;
+    public ArrayList<String> cuisinelist;
+    public String rank;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main8);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        foodlist = getIntent().getStringArrayListExtra(Main2Activity.FOODLIST);
+        catlist = getIntent().getStringArrayListExtra(Main3Activity.CATLIST);
+        cuisinelist = getIntent().getStringArrayListExtra(Main4Activity.CUISINE);
+        rank = getIntent().getStringExtra(Main5Activity.RANK);
         ingredientsList = getIntent().getStringArrayListExtra(Main6Activity.INGREDIENTS);
-        orderby = getIntent().getStringExtra(Main7Activity.ORDERBY);
-        InputStream in = getResources().openRawResource(R.raw.full_format_recipes);
+        final InputStream in = getResources().openRawResource(R.raw.full_format_recipes);
         try {
             FullRecipeList fr = new FullRecipeList(in);
             ArrayList<FullRecipe> rs = fr.getFullRecipes();
-            ArrayList<FullRecipe> result = findFullRecipe(rs,ingredientsList,orderby);
-            LinearLayout ll = (LinearLayout) findViewById(R.id.crappy_list);
-            ll.removeAllViews();
-            for(FullRecipe fc: result) {
-                View view = getListItemView(fc);
-                ll.addView(view);
-            }
-            for (FullRecipe fc: result) {
-                System.out.println(fc.getTitle());
-                System.out.println(fc.getDate());
-                System.out.println(fc.getCalories());
-                System.out.println(fc.getFat());
-                System.out.println(fc.getCategories());
-                System.out.println(fc.getProtein());
-                System.out.println(fc.getIngredients());
-                System.out.println(fc.getRating());
-                System.out.println(fc.getDescription());
-                System.out.println("=======================================================");
+            res = findRamdonRecipe(rs,ingredientsList);
+            if(res == null) {
+                ((TextView) findViewById(R.id.title)).setText("Ooops!\n Cannot find Random Recipe based on your input ingredient!\n Please go back to Home page and input again!");
+            } else {
+                ((TextView) findViewById(R.id.title)).setText(res.getTitle());
+                ((TextView) findViewById(R.id.ingredients)).setText(res.getIngredients().toString());
             }
         } catch (Exception e){
-            ((TextView) findViewById(R.id.showrecipe)).setText(("trouble reading JSON"));
+            //((TextView) findViewById(R.id.showrecipe)).setText(("trouble reading JSON"));
         }
+        Button startButton = findViewById(R.id.change);
+        startButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Main8Activity.this, Main8Activity.class);
+                putIntentData(intent);
+                startActivity(intent);
+            }
+        });
 
+        Button backButton = findViewById(R.id.back);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Main8Activity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
-    @NonNull
-    private View getListItemView(@NonNull FullRecipe r) {
-        View view = getLayoutInflater().inflate(R.layout.content_main8, null);
-        ((TextView)view.findViewById(R.id.title)).setText(r.getTitle());
-        //((TextView)view.findViewById(R.id.date)).setText(r.getDate());
-        //((TextView)view.findViewById(R.id.rating)).setText(r.getRating().toString());
-        ((TextView)view.findViewById(R.id.ingredients)).setText(r.getIngredients().toString());
-        return view;
+
+    public FullRecipe findRamdonRecipe(ArrayList<FullRecipe> rs, ArrayList<String> ingredients) {
+        Random rand = new Random();
+        int s = rand.nextInt(rs.size());
+        ArrayList<String> randomI = new ArrayList<>();
+        ArrayList<String> randomD = new ArrayList<>();
+        while (randomI.size()==0||randomD.size()==0){
+            for (int i = s; i < rs.size(); i++) {
+                FullRecipe fullrecipe = rs.get(i);
+                ArrayList<String> foodlist = fullrecipe.getIngredients();
+                if (foodlist != null) {
+                    for (String ingredient : ingredients) {
+                        if (getIngredient(foodlist, ingredient) != null) {
+                            randomI.add(getIngredient(foodlist, ingredient));
+                            int select = rand.nextInt(fullrecipe.getDirections().size());
+                            randomD.add(fullrecipe.getDirections().get(select));
+                        }
+                    }
+                }
+            }
+        s--;
+    }
+        FullRecipe randomF=new FullRecipe(randomD, 0.0, null, null, 0.0, null, 0.0, 0.0, null, randomI, 0.0);
+        return randomF;
     }
 
     @Override
@@ -74,113 +103,24 @@ public class Main8Activity extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+
     }
 
-    public static ArrayList<FullRecipe> findFullRecipe(ArrayList<FullRecipe> rs, ArrayList<String> ingredients, String orderby) {
-        ArrayList<FullRecipe> result = new ArrayList<>();
-        for(FullRecipe recipe:rs) {
-            ArrayList<String> foodlist = recipe.getIngredients();
-            if(foodlist!=null) {
-                String ingredientString = foodlist.toString();
-                if(checkIngredientInside(ingredientString, ingredients)) {
-                    result.add(recipe);
-                }
-            }
-        }
-        if(orderby == "fat high to low") {
-            Collections.sort(result, new MyFatDESCComparator());
-        } else if (orderby == "fat low to high") {
-            Collections.sort(result, new MyFatASCComparator());
-        } else if (orderby == "rating high to low") {
-            Collections.sort(result, new MyRatingDESCComparator());
-        } else if (orderby == "rating low to high") {
-            Collections.sort(result, new MyRatingASCComparator());
-        } else if (orderby == "cal high to low") {
-            Collections.sort(result, new MyCalDESCComparator());
-        } else if (orderby == "cal low to high") {
-            Collections.sort(result, new MyCalDESCComparator());
-        } else if (orderby == "protein high to low") {
-            Collections.sort(result, new MyProteinDESCComparator());
-        } else {
-            Collections.sort(result, new MyProteinASCComparator());
-        }
-        return result;
+    public void putIntentData(Intent intent) {
+        intent.putExtra(Main2Activity.FOODLIST, foodlist);
+        intent.putExtra(Main3Activity.CATLIST, catlist);
+        intent.putExtra(Main4Activity.CUISINE, cuisinelist);
+        intent.putExtra(Main5Activity.RANK, rank);
+        intent.putExtra(Main6Activity.INGREDIENTS, ingredientsList);
     }
 
-    static class MyFatDESCComparator implements Comparator<FullRecipe> {
-        public int compare(FullRecipe r1, FullRecipe r2) {
-            if (r1.getFat() == r2.getFat()) {
-                return 0;
+    public static String getIngredient(ArrayList<String> foodlist, String ingredient) {
+        for(String ingre: foodlist) {
+            if(!ingre.contains(ingredient)) {
+                return ingre;
             }
-            return r1.getFat() < r2.getFat() ? 1 : -1;
         }
-    }
-    static class MyFatASCComparator implements Comparator<FullRecipe> {
-        public int compare(FullRecipe r1, FullRecipe r2) {
-            if (r1.getFat() == r2.getFat()) {
-                return 0;
-            }
-            return r1.getFat() > r2.getFat() ? 1 : -1;
-        }
-    }
-    static class MyRatingASCComparator implements Comparator<FullRecipe> {
-        public int compare(FullRecipe r1, FullRecipe r2) {
-            if (r1.getRating() == r2.getRating()) {
-                return 0;
-            }
-            return r1.getRating() > r2.getRating() ? 1 : -1;
-        }
-    }
-    static class MyRatingDESCComparator implements Comparator<FullRecipe> {
-        public int compare(FullRecipe r1, FullRecipe r2) {
-            if (r1.getRating() == r2.getRating()) {
-                return 0;
-            }
-            return r1.getRating() < r2.getRating() ? 1 : -1;
-        }
-    }
-    static class MyCalDESCComparator implements Comparator<FullRecipe> {
-        public int compare(FullRecipe r1, FullRecipe r2) {
-            if (r1.getCalories() == r2.getCalories()) {
-                return 0;
-            }
-            return r1.getCalories() < r2.getCalories() ? 1 : -1;
-        }
-    }
-    static class MyCalASCComparator implements Comparator<FullRecipe> {
-        public int compare(FullRecipe r1, FullRecipe r2) {
-            if (r1.getCalories() == r2.getCalories()) {
-                return 0;
-            }
-            return r1.getCalories() > r2.getCalories() ? 1 : -1;
-        }
-    }
-    static class MyProteinDESCComparator implements Comparator<FullRecipe> {
-        public int compare(FullRecipe r1, FullRecipe r2) {
-            if (r1.getProtein() == r2.getProtein()) {
-                return 0;
-            }
-            return r1.getProtein() < r2.getProtein() ? 1 : -1;
-        }
-    }
-    static class MyProteinASCComparator implements Comparator<FullRecipe> {
-        public int compare(FullRecipe r1, FullRecipe r2) {
-            if (r1.getProtein() == r2.getProtein()) {
-                return 0;
-            }
-            return r1.getProtein() < r2.getProtein() ? 1 : -1;
-        }
+        return null;
     }
 
-    public static boolean checkIngredientInside(String ingredientString, ArrayList<String> ingredients) {
-        for(String ingre: ingredients) {
-            Pattern pattern = Pattern.compile(ingre);
-            Matcher match = (pattern).matcher(ingredientString);
-            if(!match.find()) {
-                return false;
-            }
-        }
-        return true;
-    }
 }
-**/

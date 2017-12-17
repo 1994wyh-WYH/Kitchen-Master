@@ -28,7 +28,8 @@
         <activity android:name=".Main9Activity" />
         <activity android:name=".Adapterr" />
         <activity android:name=".Main10Activity" />
-        <activity android:name=".Main12Activity"></activity>
+        <activity android:name=".Main12Activity" />
+        <activity android:name=".Main8Activity"></activity>
     </application>
 
 </manifest>
