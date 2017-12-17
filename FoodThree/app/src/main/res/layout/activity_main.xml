@@ -88,7 +88,11 @@
             android:id="@+id/start"
             style="@style/Widget.AppCompat.Button"
             android:layout_width="match_parent"
+<<<<<<< HEAD
             android:layout_height="100dp"
+=======
+            android:layout_height="wrap_content"
+>>>>>>> 931af71aff4e1a9d847354aaf4c7e8823eb0c410
             android:layout_weight="1"
             android:background="@color/colorPrimary1"
 
@@ -149,7 +153,11 @@
                 android:text=" How to use "
                 android:textAllCaps="true"
                 android:textColor="#fff"
+<<<<<<< HEAD
                 android:textSize="30sp"
+=======
+                android:textSize="25sp"
+>>>>>>> 931af71aff4e1a9d847354aaf4c7e8823eb0c410
                 android:textStyle="bold" />
         </LinearLayout>
 

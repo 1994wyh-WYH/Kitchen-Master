@@ -65,6 +65,10 @@ public class BlankFragment extends Fragment {
             return;
         }
         title.setText((page+1) + " Title: " + res.get(page).getTitle());
+<<<<<<< HEAD
+=======
+        //date.setText("Date: "+res.get(page).getDate());
+>>>>>>> 931af71aff4e1a9d847354aaf4c7e8823eb0c410
         rating.setText("Rating: " + res.get(page).getRating().toString());
         fat.setText("Fat: " + res.get(page).getFat().toString());
         cal.setText("Calories: " + res.get(page).getCalories().toString());

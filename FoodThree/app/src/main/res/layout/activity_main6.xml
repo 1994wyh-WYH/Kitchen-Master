@@ -133,7 +133,11 @@
             style="@style/Widget.AppCompat.CompoundButton.CheckBox"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+<<<<<<< HEAD
             android:background="@drawable/bt1"
+=======
+            android:background="@drawable/bt4"
+>>>>>>> 931af71aff4e1a9d847354aaf4c7e8823eb0c410
             android:textAllCaps="true"
             android:textColor="#fff"
             android:textSize="20sp"
@@ -172,7 +176,11 @@
             style="@style/Widget.AppCompat.CompoundButton.CheckBox"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+<<<<<<< HEAD
             android:background="@drawable/bt1"
+=======
+            android:background="@drawable/bt4"
+>>>>>>> 931af71aff4e1a9d847354aaf4c7e8823eb0c410
             android:textAllCaps="true"
             android:textColor="#fff"
             android:textSize="20sp"
@@ -237,6 +245,7 @@
             android:textColor="#fff"
             android:textSize="25sp"
             android:textStyle="bold" />
+<<<<<<< HEAD
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -256,6 +265,8 @@
             android:textColor="#fff"
             android:textSize="25sp"
             android:textStyle="bold" />
+=======
+>>>>>>> 931af71aff4e1a9d847354aaf4c7e8823eb0c410
     </LinearLayout>
 
 </LinearLayout>
