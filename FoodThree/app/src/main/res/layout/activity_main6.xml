@@ -10,35 +10,35 @@
     tools:context="com.example.katiechen.foodthree.MainActivity">
 
     <!--<TextView-->
-        <!--android:layout_marginTop="10dp"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:textStyle="bold"-->
-        <!--android:text="The Top "/>-->
+    <!--android:layout_marginTop="10dp"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:textStyle="bold"-->
+    <!--android:text="The Top "/>-->
 
     <!--<TextView-->
-        <!--android:id="@+id/rank"-->
-        <!--android:layout_marginTop="10dp"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:textStyle="bold"-->
-        <!--/>-->
+    <!--android:id="@+id/rank"-->
+    <!--android:layout_marginTop="10dp"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:textStyle="bold"-->
+    <!--/>-->
 
     <!--<TextView-->
-        <!--android:id="@+id/showcat"-->
-        <!--android:layout_marginTop="10dp"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:textStyle="bold"-->
-        <!--/>-->
+    <!--android:id="@+id/showcat"-->
+    <!--android:layout_marginTop="10dp"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:textStyle="bold"-->
+    <!--/>-->
 
     <!--<TextView-->
-        <!--android:layout_marginTop="10dp"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text=" Go With "-->
-        <!--android:textStyle="bold"-->
-        <!--/>-->
+    <!--android:layout_marginTop="10dp"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text=" Go With "-->
+    <!--android:textStyle="bold"-->
+    <!--/>-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -60,47 +60,47 @@
 
 
     <!--<TextView-->
-        <!--android:layout_marginTop="10dp"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text=" Among "-->
-        <!--android:textStyle="bold"-->
-        <!--/>-->
+    <!--android:layout_marginTop="10dp"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text=" Among "-->
+    <!--android:textStyle="bold"-->
+    <!--/>-->
 
     <!--<TextView-->
-        <!--android:id="@+id/showcuisine"-->
-        <!--android:layout_marginTop="10dp"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:textStyle="bold"-->
-        <!--/>-->
+    <!--android:id="@+id/showcuisine"-->
+    <!--android:layout_marginTop="10dp"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:textStyle="bold"-->
+    <!--/>-->
 
     <!--<TextView-->
-        <!--android:layout_marginTop="10dp"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text=" are: "-->
-        <!--android:textStyle="bold"-->
-        <!--/>-->
+    <!--android:layout_marginTop="10dp"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text=" are: "-->
+    <!--android:textStyle="bold"-->
+    <!--/>-->
 
 
     <!--<TextView-->
-        <!--android:id="@+id/showrecipe"-->
-        <!--android:layout_marginTop="10dp"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:textStyle="bold"-->
-        <!--/>-->
+    <!--android:id="@+id/showrecipe"-->
+    <!--android:layout_marginTop="10dp"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:textStyle="bold"-->
+    <!--/>-->
 
 
     <!--<ScrollView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content">-->
-        <!--<LinearLayout-->
-            <!--android:id="@+id/crappy_list"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:orientation="vertical"></LinearLayout>-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content">-->
+    <!--<LinearLayout-->
+    <!--android:id="@+id/crappy_list"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:orientation="vertical"></LinearLayout>-->
     <!--</ScrollView>-->
 
     <LinearLayout
@@ -133,15 +133,7 @@
             style="@style/Widget.AppCompat.CompoundButton.CheckBox"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-<<<<<<< HEAD
             android:background="@drawable/bt1"
-=======
-<<<<<<< HEAD
-            android:background="@drawable/bt1"
-=======
-            android:background="@drawable/bt4"
->>>>>>> 931af71aff4e1a9d847354aaf4c7e8823eb0c410
->>>>>>> 9161a51e4967eff3d883cfb85af3d381f8d61cb8
             android:textAllCaps="true"
             android:textColor="#fff"
             android:textSize="20sp"
@@ -180,15 +172,7 @@
             style="@style/Widget.AppCompat.CompoundButton.CheckBox"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-<<<<<<< HEAD
             android:background="@drawable/bt1"
-=======
-<<<<<<< HEAD
-            android:background="@drawable/bt1"
-=======
-            android:background="@drawable/bt4"
->>>>>>> 931af71aff4e1a9d847354aaf4c7e8823eb0c410
->>>>>>> 9161a51e4967eff3d883cfb85af3d381f8d61cb8
             android:textAllCaps="true"
             android:textColor="#fff"
             android:textSize="20sp"
@@ -253,28 +237,6 @@
             android:textColor="#fff"
             android:textSize="25sp"
             android:textStyle="bold" />
-<<<<<<< HEAD
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:orientation="vertical"
-        android:id="@+id/layoutrandom">
-
-        <Button
-            android:id="@+id/random"
-            style="@style/Widget.AppCompat.Button.Small"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/bt4"
-            android:text="EXplore RANDOM Recipes(all cuisines)"
-            android:textColor="#fff"
-            android:textSize="25sp"
-            android:textStyle="bold" />
-=======
->>>>>>> 931af71aff4e1a9d847354aaf4c7e8823eb0c410
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"

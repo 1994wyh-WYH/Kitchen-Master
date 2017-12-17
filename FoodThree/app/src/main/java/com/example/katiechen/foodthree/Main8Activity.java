@@ -31,11 +31,11 @@ public class Main8Activity extends AppCompatActivity {
         setContentView(R.layout.activity_main8);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        foodlist = getIntent().getStringArrayListExtra(Main2Activity.FOODLIST);
-        catlist = getIntent().getStringArrayListExtra(Main3Activity.CATLIST);
-        cuisinelist = getIntent().getStringArrayListExtra(Main4Activity.CUISINE);
-        rank = getIntent().getStringExtra(Main5Activity.RANK);
-        ingredientsList = getIntent().getStringArrayListExtra(Main6Activity.INGREDIENTS);
+        foodlist = getIntent().getStringArrayListExtra(MainIngreInputActivity.FOODLIST);
+        catlist = getIntent().getStringArrayListExtra(MainCategoryActivity.CATLIST);
+        cuisinelist = getIntent().getStringArrayListExtra(MainCuisineActivity.CUISINE);
+        rank = getIntent().getStringExtra(MainRankActivity.RANK);
+        ingredientsList = getIntent().getStringArrayListExtra(MainIngreOutputActivity.INGREDIENTS);
         final InputStream in = getResources().openRawResource(R.raw.full_format_recipes);
         try {
             FullRecipeList fr = new FullRecipeList(in);
@@ -107,11 +107,11 @@ public class Main8Activity extends AppCompatActivity {
     }
 
     public void putIntentData(Intent intent) {
-        intent.putExtra(Main2Activity.FOODLIST, foodlist);
-        intent.putExtra(Main3Activity.CATLIST, catlist);
-        intent.putExtra(Main4Activity.CUISINE, cuisinelist);
-        intent.putExtra(Main5Activity.RANK, rank);
-        intent.putExtra(Main6Activity.INGREDIENTS, ingredientsList);
+        intent.putExtra(MainIngreInputActivity.FOODLIST, foodlist);
+        intent.putExtra(MainCategoryActivity.CATLIST, catlist);
+        intent.putExtra(MainCuisineActivity.CUISINE, cuisinelist);
+        intent.putExtra(MainRankActivity.RANK, rank);
+        intent.putExtra(MainIngreOutputActivity.INGREDIENTS, ingredientsList);
     }
 
     public static String getIngredient(ArrayList<String> foodlist, String ingredient) {
