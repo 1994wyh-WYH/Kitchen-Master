@@ -1,0 +1,376 @@
+seasoning
+sauce
+paste
+masala
+broth
+salt
+sugar
+Tenderizer
+MSG
+Adobo
+Alfredo
+Pectin
+Apple Wood Smoke Rub
+Bacon Bits
+Barbecue
+Spice
+Beef Bullion
+Broccoli Soup Mix
+Buttermilk
+Ranch 
+Caesar
+Rub
+Cajun
+Celery Salt
+Cheese Flavoring
+Chicken Bullion
+Chili
+Curry
+Dill 
+Dip
+Fajita
+Hickory Salt
+Italian Dressing Mix
+dressing
+Jamaican Jerk 
+Jerky
+Lemon
+juice
+Pepper
+Mesquite Rub
+Mint Garden
+Mrs. Dash
+Creamers
+creamer
+Syrup
+Salsa 
+Sassy
+Spinach Dip Mix
+Thicker Quicker
+Vegetable Broth Bullion
+Herb Dip Mix
+soup Blend Mix
+Alfalfa leaf powder
+Medicago sativa
+Alfalfa Sprout seeds
+Aloes ferox
+Aloes
+Angelica archangelica	
+Angelica Root
+Maranta arundinaceae
+Arrowroot
+Cynara scolymus
+Artichoke Leaf
+Withania somnifera
+Ashwagandha Root
+Astragalus membranaceus
+Astragalus Root
+Berberis vulgaris
+Barberry Root
+Bark
+Hordeum vulgare
+Barley Grass
+Ocimum basilicum
+Basil
+Laurus nobilis
+Bay Leaf
+Myrica cerifera
+Bayberry
+Bee Pollen granules
+Beta vulgaris rubra
+beet juice
+Beet Leaf
+Beet Root
+Montmorillinite
+Bentonite Clay
+Vaccinium myrtillus	
+Bilberry
+Juglans nigra
+Walnut Hull
+Cimicifuga racemosa
+Black Cohosh
+Fucus vesiculosus	
+Bladderwrack
+Cnicus benedictus
+Blessed Thistle Herb
+Sanguinaria canadensis
+Bloodroot Root
+Caulophyllum thalictroides
+Blue Cohosh Root
+Viola odorata
+Blue Violet Leaf
+Brassica oleracea
+Broccoli powder
+Rhamnus frangula
+Buckthorn Barkpowder
+Fagopyrum esculentum
+Buckwheat Seed
+Arctium lappa
+Burdock Root powder
+Rascus aceleatus
+Butcher’s Broom Root
+Blend
+Elettaria cardamomum
+Cardamom Seed Decorticated
+Ceratonia siliqua
+Carob
+Daurcus carota	
+Carrot powder
+Thamnus purshiana
+Cascara Sagrada Bark
+Nepeta cataria
+Catnip Leaf
+Unicaria tomentosa
+Cat’s Claw Bark
+Capsicum annum
+Cayenne
+Pepper
+Apium graveolens
+Celery Seed
+Chai Tea
+tea
+Larrea tridentata
+Chaparral Leaf
+Charcoal
+Vitex agnus castus
+Chaste Tree Berry
+Coriandrum sativum
+Cilantro
+Cinnamomum cassia
+Cinnamon
+Galium aparine
+Cleavers Herb
+Syzygium aromaticum
+Cloves
+clove
+Cocoa powder
+Symphytum officinale
+Comfrey Root
+Viburnum opulus	Cramp Bark
+Geranium maculatum
+Cranesbill Root
+Cuminum cyminum
+Cumin
+Turnera diffusa
+Damiana Leaf
+Taraxacum officinale
+Dandelion Root
+Rhodymenia palmetta
+Dulse Leaf
+Echinacea angustifolia
+Eleutherococcus senticosus	
+Ginseng
+Siberian Eleuthero Root
+Euphrasia officinalis	
+Eyebright Herb powder 
+Chamaelirium luteum	
+False Unicorn Root
+Foeniculum vulgare	
+Fennel
+Trigonella foenum graecum	
+Fenugreek Seed
+Tanacetum parthenium	
+Feverfew Herb
+Linum usitatissimum	
+Flax Seed
+Boswellia serrata	
+Frankincense Tears
+Fructose
+Allium sativum	Garlic powder
+Zingiber officinale
+Ginger
+Ginkgo
+Panax quinquefolium
+Glucosamine Sulfate
+Hydrastis canadensis
+Goldenseal Root
+Eupatorium purpureum
+Gravel Root
+Camellia sinensis
+Green Tea
+Gymnema sylvestre
+Crataegus laevigata
+Hawthorn Berry powder
+Humulus lupulus	Hops Flowers
+Armoracia rusticana
+Horseradish Root
+Hydranea arborescens	
+Hydrangea Root
+Hyssopus officinalis
+Hyssop Herb
+Chondrus crispus	
+Irish Moss
+Italian Seasoning
+Juniperus communis
+Juniper Berry
+Piper methysticum
+Kava Kava Root
+Ascophyllum nodosum
+Pueraria lobata
+Kudzu Root
+Lady’s Slipper
+Lecithin granules
+Citrus limon
+citrus
+Lemon Peel
+zest
+Cymbopogon citratus
+Lemongrass
+Glycyrrhiza uralensis
+Licorice root
+Lobelia inflata	Lobelia
+Lycium chinense	Lycii
+Gogi
+Lepidium meyenii
+Maca Root powder
+Althaea officinalis
+Marshmallow Root
+Silybum marianum
+Milk Thistle Seed
+Miso
+Leonurus cardiaca
+herb
+MSM
+Verbascum thapsus
+Mullein Leaf
+Vigna radiata
+Mung Bean
+Sinapis alba
+Mustard
+Commiphora molmol
+Gum
+Urtica dioica
+Nettle Leaf
+Myristica fragrans
+Nutmeg
+Nutritional Yeast
+Avena sativa
+Oatstraw
+Olea europaea
+Olive Leaf
+Citrus sinensis
+Orange Peel
+Origanum vulgare
+Oregano Leaf
+Mohonia aquifolium
+Oregon Grape Root
+Petroselinum crispum
+Parsley
+Passiflora incarnata
+Passion Flower
+Tabebuia heptaphylla
+Pau D’Arco Bark
+Piper nigrum
+Mentha piperita
+Peppermint
+mint
+Plantago major
+Plantain Leaf
+Asclepias tuberosa
+Pleurisy Root
+Phytolacca americana
+Poke Root
+Papaver somniferum
+Poppy Seed
+Zanthoxylum americanum
+Ash Bark
+Prunus africanus
+Pygeum Bark
+Eupatorium purpureum
+Queen of the Meadow
+Trifolium pratense
+Clover
+Rubus idaeus
+Red Raspberry Leaf
+Ceanothus americanus
+Red Root
+Ganoderma lucidum
+Reishi Muschroom Black
+Rheum palmatum
+Rhubarb Root
+Rosa canina
+Rosehips
+Rosmarinus officinalis	
+Rosemary
+Carthamus tinctorius
+Safflower
+Salvia officinalis
+Sage
+Smilax medica
+Sarsaparilla Root
+Serenoa repens
+Saw Palmetto Berry
+Schisandra chinensis
+Schisandra Berry
+Scutellaria lateriflora
+Scullcap Herb
+Senna alexandrina
+Senna Leaf
+Sesamum orientale
+Sesame
+Equisetum arvense	
+Shavegreas Herb
+Horsetail
+Rumex acetosella
+Sheep Sorrel Herb
+herb
+Capsella bursa pastoris
+Shepherd’s Purse Herb
+Stillingia sylvatica
+Sillingia Root
+Ulmus rubra
+Slippery Elm Bark
+Spinacia oleracea
+Spinach
+Spirulina platensis
+Spirulina
+Mitchella repens
+Squawvine Herb
+Hypericum perforatum
+St. John’s wort Herb
+Stevia rebaudiana
+Stevia Leaf
+Collinsonia canadensis
+Stone Root
+Thymus vulgaris
+Thyme
+Thymus vulgaris
+Curcuma longa
+Turmeric
+Arctostaphylos uva ursi
+Uva Ursi Leaf
+Valeriana wallichii
+Valerian Root
+Vanilla planifolia
+Vanilla
+extract
+Nasturtium officinale
+Watercress
+Triticum aestivum
+Wheat Gress
+Quercus alba
+White Oak Bark
+Salix alba
+White Willow Bark
+Prunus serotina
+Wild Cherry Bark
+Lactuca quercina
+Wild Lettuce
+Dioscorea villosa
+Wild Yam Root]
+Gaultheria procumbens
+Wintergreen Leaf
+Hamamelis virginiana
+Witch Hazel Leaf
+Stachys officinales
+Wood Betony Herb
+Artemisia absinthium
+Wormwood Herb powder
+Achillea millefolium
+Yarrow Flower powder
+Rumex crispus
+Yellow Dock Root powder
+Ilex paraguayensis
+Yerba Mate Leaf
+Pausinystalia yohimbe
+Yohimbe Bark powder
